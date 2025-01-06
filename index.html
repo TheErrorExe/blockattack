@@ -26,17 +26,17 @@
     </section>
     <section id="features">
         <h2>Warum Blockattack?</h2>
-        <div class="card" data-feature="Gebietsclaiming">
+        <div class="card" data-feature="Gebietsclaiming" data-description="Schütze dein Land vor anderen Spielern und baue es aus.">
             <img src="/image1.jpg" alt="Feature 1">
             <h3>Gebietsclaiming</h3>
             <p>Schütze dein Land vor anderen Spielern und baue es aus.</p>
         </div>
-        <div class="card" data-feature="PVP-Kämpfe">
+        <div class="card" data-feature="PVP-Kämpfe" data-description="Tritt in spannenden Kämpfen gegen andere Spieler an!">
             <img src="/image2.jpg" alt="Feature 2">
             <h3>PVP-Kämpfe</h3>
             <p>Tritt in spannenden Kämpfen gegen andere Spieler an!</p>
         </div>
-        <div class="card" data-feature="Events">
+        <div class="card" data-feature="Events" data-description="Erlebe regelmäßige Events und spannende Abenteuer.">
             <img src="/image3.jpg" alt="Feature 3">
             <h3>Events</h3>
             <p>Erlebe regelmäßige Events und spannende Abenteuer.</p>
@@ -50,7 +50,8 @@
         document.querySelectorAll('.card').forEach(card => {
             card.addEventListener('click', () => {
                 const featureName = card.getAttribute('data-feature');
-                alert(`Du hast das Feature "${featureName}" ausgewählt!`);
+                const featureDescription = card.getAttribute('data-description');
+                alert(`Feature: "${featureName}"\n\nBeschreibung: ${featureDescription}`);
             });
         });
     </script>
