@@ -5,119 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockattack - Minecraft Server</title>
     <link rel="stylesheet" href="/static/css/style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        #features {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .card {
-            text-align: center;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 10px;
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background: #fff;
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            width: 90%;
-            max-width: 400px;
-            padding: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            z-index: 1000;
-            display: none;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        .popup h3 {
-            margin-top: 0;
-        }
-
-        .popup .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #333;
-        }
-
-        .popup .close:hover {
-            color: red;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            display: none;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -45%);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-        }
-    </style>
+    <script src="/static/js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -136,83 +24,26 @@
         <p>Verbinde dich jetzt: <strong>blockattack.fun</strong></p>
         <p><em>Jetzt die neuesten Features wie das Claimen von Gebieten ausprobieren!</em></p>
     </section>
-
     <section id="features">
         <h2>Warum Blockattack?</h2>
-        <div class="card" id="feature1">
+        <div class="card">
             <img src="/image1.jpg" alt="Feature 1">
             <h3>Gebietsclaiming</h3>
             <p>Schütze dein Land vor anderen Spielern und baue es aus.</p>
         </div>
-        <div class="card" id="feature2">
+        <div class="card">
             <img src="/image2.jpg" alt="Feature 2">
             <h3>PVP-Kämpfe</h3>
             <p>Tritt in spannenden Kämpfen gegen andere Spieler an!</p>
         </div>
-        <div class="card" id="feature3">
+        <div class="card">
             <img src="/image3.jpg" alt="Feature 3">
             <h3>Events</h3>
             <p>Erlebe regelmäßige Events und spannende Abenteuer.</p>
         </div>
     </section>
-
     <footer>
         <p>&copy; 2025 Blockattack Server. Alle Rechte vorbehalten. Powered by mine-server.org. Website by TheErrorExe</p>
     </footer>
-
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="popup">
-        <button class="close" id="closePopup">&times;</button>
-        <h3 id="popupTitle">Popup-Titel</h3>
-        <p id="popupDescription">Popup-Beschreibung</p>
-    </div>
-
-    <script>
-        const popup = document.getElementById('popup');
-        const overlay = document.getElementById('overlay');
-        const closePopup = document.getElementById('closePopup');
-        const popupTitle = document.getElementById('popupTitle');
-        const popupDescription = document.getElementById('popupDescription');
-
-        const featureData = {
-            feature1: {
-                title: "Gebietsclaiming",
-                description: "Schütze dein Land vor anderen Spielern und baue es aus."
-            },
-            feature2: {
-                title: "PVP-Kämpfe",
-                description: "Tritt in spannenden Kämpfen gegen andere Spieler an!"
-            },
-            feature3: {
-                title: "Events",
-                description: "Erlebe regelmäßige Events und spannende Abenteuer."
-            }
-        };
-
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', () => {
-                const id = card.id;
-                const data = featureData[id];
-
-                if (data) {
-                    popupTitle.textContent = data.title;
-                    popupDescription.textContent = data.description;
-
-                    overlay.style.display = 'block';
-                    popup.style.display = 'block';
-                }
-            });
-        });
-
-        closePopup.addEventListener('click', () => {
-            overlay.style.display = 'none';
-            popup.style.display = 'none';
-        });
-
-        overlay.addEventListener('click', () => {
-            overlay.style.display = 'none';
-            popup.style.display = 'none';
-        });
-    </script>
 </body>
 </html>
