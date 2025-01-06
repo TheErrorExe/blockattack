@@ -1,4 +1,194 @@
 /* Reset und grundlegende Stile */
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0b1e;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background: #1d1d2b;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #00d8ff;
+}
+
+footer {
+    background-color: #1d1d2b;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+h1, h2, h3 {
+    font-size: 2.5em;
+    color: #00d8ff;
+    text-align: center;
+    margin: 20px 0;
+}
+*/
+/* Animierte Hintergründe */
+/*
+body::after {
+    content: '';
+    background: url('https://www.w3schools.com/w3images/space.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    animation: backgroundAnimation 30s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+*/
+/* Abschnitte */
+/*
+section {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #00d8ff;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+*/
+/* Cards Layout */
+/*
+.card {
+    background: rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s, background 0.3s;
+    width: 300px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card h3 {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.card p {
+    font-size: 1.1em;
+    color: #aaa;
+}
+*/
+/* Buttons */
+/*
+button {
+    background-color: #00d8ff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #009cba;
+}
+
+*/
+/*
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #00d8ff;
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #00d8ff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #009cba;
+}
+*/
+
+
+/* Reset und grundlegende Stile */
 * {
     margin: 0;
     padding: 0;
@@ -99,42 +289,45 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Cards Layout */
-.card {
-    background: rgba(0, 0, 0, 0.3);
-    margin: 20px;
-    padding: 20px;
-    border-radius: 8px;
+/* Spezifischer Stil für die Features */
+#features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#features .card {
+    width: 300px; /* Einheitliche Breite */
+    aspect-ratio: 4 / 3; /* Rechteckiges Verhältnis */
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 0; /* Keine Abrundungen für rechteckige Form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, background 0.3s;
-    width: 300px;
     text-align: center;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 0, 0, 0.5);
+#features .card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.8);
 }
 
-.card img {
+#features .card img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s;
+    border-radius: 0; /* Rechteckige Bilder */
 }
 
-.card img:hover {
-    transform: scale(1.1);
-}
-
-.card h3 {
+#features .card h3 {
     color: #fff;
-    margin-top: 10px;
+    margin: 10px 0;
     font-size: 1.5em;
 }
 
-.card p {
+#features .card p {
     font-size: 1.1em;
-    color: #aaa;
+    color: #ccc;
 }
 
 /* Buttons */
