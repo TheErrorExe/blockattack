@@ -1,2 +1,2 @@
 # blockattack
-a website for someone who asked for a website
+a website for someone who (not) asked for a website
