@@ -8,6 +8,30 @@
     <script src="/static/js/script.js" defer></script>
     <style>
         /* Server Status Bereich */
+        #online-players {
+    margin-top: 20px;
+}
+
+#players-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#players-list .player {
+    margin: 10px;
+    text-align: center;
+}
+
+#players-list .player img {
+    border-radius: 50%;
+}
+
+#players-list .player span {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
 #server-status {
     margin-top: 40px;
     padding: 20px;
@@ -171,12 +195,19 @@
     </div>
 </section>
     <!-- Server Status Anzeige -->
+<!-- Server Status Anzeige -->
 <section id="server-status">
     <h2>Server Status</h2>
     <p id="status-message">Lade Serverstatus...</p>
     <p id="server-ip" style="display:none;"></p>
     <p id="players-online" style="display:none;"></p>
     <p id="motd" style="display:none;"></p>
+</section>
+
+<!-- Online Spieler Sektion -->
+<section id="online-players" style="display:none;">
+    <h2>Online Spieler</h2>
+    <div id="players-list"></div>
 </section>
 
 <script>
@@ -186,7 +217,7 @@
     // API URL
     const apiUrl = `https://api.mcsrvstat.us/3/${serverAddress}`;
 
-    // Abrufen des Serverstatus
+    // Abrufen des Serverstatus und Spieler
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -194,17 +225,17 @@
             const serverIpElement = document.getElementById('server-ip');
             const playersOnlineElement = document.getElementById('players-online');
             const motdElement = document.getElementById('motd');
+            const playersListElement = document.getElementById('players-list');
+            const onlinePlayersSection = document.getElementById('online-players');
             
             if (data.online) {
                 // Überprüfen, ob die MOTD das Wort "Wartung" enthält
-                const motdText = data.motd.clean.join(" "); // Kombiniere alle Zeilen der MOTD
+                const motdText = data.motd.clean.join(" ");
                 if (motdText.toLowerCase().includes("wartung")) {
-                    // Wenn "Wartung" in der MOTD enthalten ist, wird der Server als offline angezeigt
                     statusMessageElement.innerText = 'Server ist in Wartung!';
                     statusMessageElement.classList.remove("online");
                     statusMessageElement.classList.add("offline");
                 } else {
-                    // Wenn der Server online ist und keine Wartung angezeigt wird
                     statusMessageElement.innerText = 'Server ist Online!';
                     statusMessageElement.classList.remove("offline");
                     statusMessageElement.classList.add("online");
@@ -214,13 +245,46 @@
                 serverIpElement.innerText = `IP: ${data.ip}`;
                 playersOnlineElement.innerText = `Spieler Online: ${data.players.online} / ${data.players.max}`;
                 motdElement.innerText = `MOTD: ${data.motd.clean.join(' ')}`;
+
+                // Spieler anzeigen, falls vorhanden
+                if (data.players.list && data.players.list.length > 0) {
+                    // Spieler unter "Online Spieler" anzeigen
+                    onlinePlayersSection.style.display = 'block';
+                    playersListElement.innerHTML = '';
+
+                    data.players.list.forEach(player => {
+                        // UUID der Spieler ermitteln und Mojang API verwenden
+                        fetch(`https://api.mojang.com/users/profiles/minecraft/${player}`)
+                            .then(response => response.json())
+                            .then(playerData => {
+                                const playerName = playerData.name;
+                                const playerUUID = playerData.id;
+                                const skinUrl = `https://crafatar.com/avatars/${playerUUID}?size=64`;
+
+                                // Spielername und Skin in die Liste einfügen
+                                const playerElement = document.createElement('div');
+                                playerElement.classList.add('player');
+
+                                const playerImage = document.createElement('img');
+                                playerImage.src = skinUrl;
+                                playerImage.alt = `${playerName}'s Skin`;
+                                playerImage.style.width = '64px';
+                                playerImage.style.height = '64px';
+                                
+                                const playerNameElement = document.createElement('span');
+                                playerNameElement.textContent = playerName;
+
+                                playerElement.appendChild(playerImage);
+                                playerElement.appendChild(playerNameElement);
+                                playersListElement.appendChild(playerElement);
+                            })
+                            .catch(error => console.error('Fehler beim Abrufen des Spielers:', error));
+                    });
+                }
             } else {
-                // Server ist offline
                 statusMessageElement.innerText = 'Server ist Offline!';
                 statusMessageElement.classList.remove("online");
                 statusMessageElement.classList.add("offline");
-
-                // Nur die IP anzeigen
                 serverIpElement.innerText = `IP: ${data.ip}`;
             }
 
@@ -230,11 +294,11 @@
             motdElement.style.display = 'block';
         })
         .catch(error => {
-            // Fehler beim Abrufen der Daten
             document.getElementById('status-message').innerText = 'Fehler beim Abrufen des Serverstatus.';
             console.error('Fehler:', error);
         });
 </script>
+
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
     <footer>
