@@ -189,6 +189,7 @@ input[type="submit"]:hover {
 
 
 /* Reset und grundlegende Stile */
+/* Reset und grundlegende Stile */
 * {
     margin: 0;
     padding: 0;
@@ -293,8 +294,9 @@ h2 {
 #features {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: center; /* Zentriert die Karten horizontal */
+    gap: 20px; /* Abstand zwischen den Karten */
+    margin-top: 20px; /* Abstand nach oben */
 }
 
 #features .card {
@@ -366,6 +368,11 @@ input[type="submit"] {
     background-color: #00d8ff;
     cursor: pointer;
 }
+
+input[type="submit"]:hover {
+    background-color: #009cba;
+}
+
 
 input[type="submit"]:hover {
     background-color: #009cba;
