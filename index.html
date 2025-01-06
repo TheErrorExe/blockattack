@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -52,6 +52,77 @@
                 const featureName = card.getAttribute('data-feature');
                 const featureDescription = card.getAttribute('data-description');
                 alert(`Feature: "${featureName}"\n\nBeschreibung: ${featureDescription}`);
+            });
+        });
+    </script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockattack - Minecraft Server</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">Über uns</a></li>
+                <li><a href="/server.html">Server Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Willkommen auf Blockattack</h1>
+        <p>Der beste Minecraft Server von Dr. Mifo!</p>
+        <p>Verbinde dich jetzt: <strong>blockattack.fun</strong></p>
+        <p><em>Jetzt die neuesten Features wie das Claimen von Gebieten ausprobieren!</em></p>
+    </section>
+    <section id="features">
+        <h2>Warum Blockattack?</h2>
+        <div class="card" data-feature="Gebietsclaiming">
+            <img src="/image1.jpg" alt="Feature 1">
+            <h3>Gebietsclaiming</h3>
+            <p>Schütze dein Land vor anderen Spielern und baue es aus.</p>
+        </div>
+        <div class="card" data-feature="PVP-Kämpfe">
+            <img src="/image2.jpg" alt="Feature 2">
+            <h3>PVP-Kämpfe</h3>
+            <p>Tritt in spannenden Kämpfen gegen andere Spieler an!</p>
+        </div>
+        <div class="card" data-feature="Events">
+            <img src="/image3.jpg" alt="Feature 3">
+            <h3>Events</h3>
+            <p>Erlebe regelmäßige Events und spannende Abenteuer.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Blockattack Server. Alle Rechte vorbehalten. Powered by mine-server.org. Website by TheErrorExe</p>
+    </footer>
+    <script>
+        // Hardcodierte Beschreibungen für jedes Feature
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const featureName = card.getAttribute('data-feature');
+                switch (featureName) {
+                    case "Gebietsclaiming":
+                        alert("Feature: Gebietsclaiming\n\nBeschreibung: Schütze dein Land vor anderen Spielern und baue es aus.");
+                        break;
+                    case "PVP-Kämpfe":
+                        alert("Feature: PVP-Kämpfe\n\nBeschreibung: Tritt in spannenden Kämpfen gegen andere Spieler an!");
+                        break;
+                    case "Events":
+                        alert("Feature: Events\n\nBeschreibung: Erlebe regelmäßige Events und spannende Abenteuer.");
+                        break;
+                    default:
+                        alert("Feature nicht gefunden.");
+                }
             });
         });
     </script>
