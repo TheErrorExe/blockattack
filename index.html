@@ -1,6 +1,5 @@
 <!--
 
-
 Copyright 2025 TheErrorExe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -24,6 +23,34 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
     <title>Blockattack - Minecraft Server</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/js/script.js" defer></script>
+    <style>
+        /* Stil für den TNT-Block */
+        .tnt-block {
+            width: 100px;
+            height: 100px;
+            background-image: url('tnt-explode.png');
+            background-size: cover;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Stil für das GIF */
+        .tnt-gif {
+            display: none;
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Stil für den zusammenfallenden Effekt der Seite */
+        .collapsed {
+            transition: all 0.5s ease-in-out;
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -60,9 +87,16 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
             <p>Erlebe regelmäßige Events und spannende Abenteuer.</p>
         </div>
     </section>
+    <!-- Der TNT Block -->
+    <section id="tnt-section">
+        <h2>Klick auf das TNT</h2>
+        <div id="tnt" class="tnt-block" onclick="triggerTNT()"></div>
+        <div id="tntGif" class="tnt-gif" style="background-image: url('tnt-explode.gif');"></div>
+    </section>
+
     <section id="home">
         <br>
-    <iframe src="https://discord.com/widget?id=1220023443391643830&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+        <iframe src="https://discord.com/widget?id=1220023443391643830&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
         <br>
         <br>
     </section>
@@ -91,6 +125,22 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
                 }
             });
         });
+
+        // TNT-Trigger und Animationsfunktion
+        function triggerTNT() {
+            const tntBlock = document.getElementById('tnt');
+            const tntGif = document.getElementById('tntGif');
+
+            // Zeige das GIF
+            tntGif.style.display = 'block';
+            tntBlock.style.display = 'none';
+
+            // Nach 5 Sekunden das GIF verschwinden lassen
+            setTimeout(() => {
+                tntGif.style.display = 'none';
+                document.body.classList.add('collapsed'); // Seite "fällt zusammen"
+            }, 5000);
+        }
     </script>
 </body>
 </html>
