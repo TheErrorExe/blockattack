@@ -15,6 +15,7 @@
             background-size: cover;
             cursor: pointer;
             margin-top: 20px;
+            transition: background 0.5s ease-in-out; /* Übergang beim Wechsel der Bilder */
         }
 
         /* Stil für das GIF */
@@ -29,7 +30,7 @@
             background-size: cover;
         }
 
-        /* Stil für das verstecken von Elementen */
+        /* Stil für das Verstecken der Elemente */
         .hidden {
             visibility: hidden;
         }
@@ -119,27 +120,29 @@
             const boomSound = new Audio('tnt-boom.mp3');
             boomSound.play();
 
-            // Zeige das GIF
-            tntGif.style.display = 'block';
+            // Ersetze das PNG durch das GIF
+            tntBlock.style.backgroundImage = "url('tnt-explode.gif')";
+            tntGif.style.display = 'block'; // Zeige das GIF an
 
-            // Verstecke alle Elemente nach 4 Sekunden
+            // Verstecke alle anderen Elemente nach 4 Sekunden
             setTimeout(() => {
                 allElements.forEach(el => {
                     el.classList.add('hidden');
                 });
             }, 4000);
 
-            // Nach 7 Sekunden alle Elemente wieder sichtbar machen
+            // Nach 4 Sekunden das PNG wiederherstellen und das GIF entfernen
+            setTimeout(() => {
+                tntBlock.style.backgroundImage = "url('tnt-explode.png')";
+                tntGif.style.display = 'none'; // Entferne das GIF
+            }, 12000); // Warte 12 Sekunden (4s Sound + 7s Unsichtbarkeit + 1s GIF Anzeige)
+
+            // Nach 11 Sekunden alle Elemente wieder sichtbar machen
             setTimeout(() => {
                 allElements.forEach(el => {
                     el.classList.remove('hidden');
                 });
             }, 11000);
-
-            // Verhindere das Abspielen des GIFs im Hintergrund, wenn es nicht sichtbar ist
-            tntGif.addEventListener('animationend', () => {
-                tntGif.style.display = 'none'; // Stoppe das GIF
-            });
         }
     </script>
 </body>
