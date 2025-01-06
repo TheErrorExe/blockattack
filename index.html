@@ -135,6 +135,9 @@
             setTimeout(() => {
                 tntBlock.style.backgroundImage = "url('tnt-explode.png')";
                 tntGif.style.display = 'none'; // Entferne das GIF
+
+                // Neuladen der Seite
+                location.reload();
             }, 12000); // Warte 12 Sekunden (4s Sound + 7s Unsichtbarkeit + 1s GIF Anzeige)
 
             // Nach 11 Sekunden alle Elemente wieder sichtbar machen
