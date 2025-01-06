@@ -26,17 +26,17 @@
     </section>
     <section id="features">
         <h2>Warum Blockattack?</h2>
-        <div class="card">
+        <div class="card" data-feature="Gebietsclaiming">
             <img src="/image1.jpg" alt="Feature 1">
             <h3>Gebietsclaiming</h3>
             <p>Schütze dein Land vor anderen Spielern und baue es aus.</p>
         </div>
-        <div class="card">
+        <div class="card" data-feature="PVP-Kämpfe">
             <img src="/image2.jpg" alt="Feature 2">
             <h3>PVP-Kämpfe</h3>
             <p>Tritt in spannenden Kämpfen gegen andere Spieler an!</p>
         </div>
-        <div class="card">
+        <div class="card" data-feature="Events">
             <img src="/image3.jpg" alt="Feature 3">
             <h3>Events</h3>
             <p>Erlebe regelmäßige Events und spannende Abenteuer.</p>
@@ -45,5 +45,14 @@
     <footer>
         <p>&copy; 2025 Blockattack Server. Alle Rechte vorbehalten. Powered by mine-server.org. Website by TheErrorExe</p>
     </footer>
+    <script>
+        // JavaScript hinzufügen
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const featureName = card.getAttribute('data-feature');
+                alert(`Du hast das Feature "${featureName}" ausgewählt!`);
+            });
+        });
+    </script>
 </body>
 </html>
