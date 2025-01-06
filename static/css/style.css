@@ -99,45 +99,42 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Spezifischer Stil für die Features */
-#features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-#features .card {
-    width: 300px; /* Einheitliche Breite */
-    aspect-ratio: 4 / 3; /* Rechteckiges Verhältnis */
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    border-radius: 0; /* Keine Abrundungen für rechteckige Form */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+/* Cards Layout */
+.card {
+    background: rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
     transition: transform 0.3s, background 0.3s;
+    width: 300px;
     text-align: center;
 }
 
-#features .card:hover {
-    transform: translateY(-5px);
-    background: rgba(0, 0, 0, 0.8);
+.card:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.5);
 }
 
-#features .card img {
+.card img {
     width: 100%;
     height: auto;
-    border-radius: 0; /* Rechteckige Bilder */
+    border-radius: 8px;
+    transition: transform 0.3s;
 }
 
-#features .card h3 {
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card h3 {
     color: #fff;
-    margin: 10px 0;
+    margin-top: 10px;
     font-size: 1.5em;
 }
 
-#features .card p {
+.card p {
     font-size: 1.1em;
-    color: #ccc;
+    color: #aaa;
 }
 
 /* Buttons */
