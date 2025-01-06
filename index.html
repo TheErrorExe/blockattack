@@ -15,7 +15,6 @@
             background-size: cover;
             cursor: pointer;
             margin-top: 20px;
-            z-index: 999;
         }
 
         /* Stil für das GIF */
@@ -26,33 +25,13 @@
             background-size: cover;
             cursor: pointer;
             margin-top: 20px;
-            z-index: 999;
+            background-image: url('tnt-explode.gif');
+            background-size: cover;
         }
 
-        /* Alle Elemente der Seite sollen unabhängig voneinander positioniert werden */
-        body, html {
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #f0f0f0;
-            position: relative;
-        }
-
-        .falling {
-            position: absolute;
-            transition: all 1s ease-in-out;
-            animation: fall 2s forwards;
-        }
-
-        /* Fall-Animation */
-        @keyframes fall {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
+        /* Stil für das verstecken von Elementen */
+        .hidden {
+            visibility: hidden;
         }
     </style>
 </head>
@@ -95,7 +74,7 @@
     <section id="tnt-section">
         <h2>Klick auf das TNT</h2>
         <div id="tnt" class="tnt-block" onclick="triggerTNT()"></div>
-        <div id="tntGif" class="tnt-gif" style="background-image: url('tnt-explode.gif');"></div>
+        <div id="tntGif" class="tnt-gif"></div>
     </section>
 
     <section id="home">
@@ -109,7 +88,6 @@
         <br>
         <a href="/privacy.html" style="display: inline;">Privacy</a><p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
     </footer>
-
     <script>
         // Hardcodierte Beschreibungen für jedes Feature
         document.querySelectorAll('.card').forEach(card => {
@@ -133,21 +111,35 @@
 
         // TNT-Trigger und Animationsfunktion
         function triggerTNT() {
-            const elements = document.querySelectorAll('header, section, footer, .card, .tnt-block, .tnt-gif');
-            
-            // Zeige das GIF
+            const tntBlock = document.getElementById('tnt');
             const tntGif = document.getElementById('tntGif');
-            tntGif.style.display = 'block';
-            
-            // Alle Seiten-Elemente fallen lassen
-            elements.forEach(el => {
-                el.classList.add('falling');
-            });
+            const allElements = document.querySelectorAll('body *:not(#tntGif)'); // Alle Elemente außer dem GIF
 
-            // Nach 10 Sekunden die Seite neu laden
+            // Spiele den TNT Boom Sound ab
+            const boomSound = new Audio('tnt-boom.mp3');
+            boomSound.play();
+
+            // Zeige das GIF
+            tntGif.style.display = 'block';
+
+            // Verstecke alle Elemente nach 4 Sekunden
             setTimeout(() => {
-                location.reload();
-            }, 10000);
+                allElements.forEach(el => {
+                    el.classList.add('hidden');
+                });
+            }, 4000);
+
+            // Nach 7 Sekunden alle Elemente wieder sichtbar machen
+            setTimeout(() => {
+                allElements.forEach(el => {
+                    el.classList.remove('hidden');
+                });
+            }, 11000);
+
+            // Verhindere das Abspielen des GIFs im Hintergrund, wenn es nicht sichtbar ist
+            tntGif.addEventListener('animationend', () => {
+                tntGif.style.display = 'none'; // Stoppe das GIF
+            });
         }
     </script>
 </body>
