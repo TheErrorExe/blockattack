@@ -1,4 +1,4 @@
 # blockattack
-a website for someone who (not) asked for a website
+Website for Blockattack
 
-https://blockattack.errexe.xyz
+https://www.blockattack.fun
