@@ -97,6 +97,8 @@
 
     // Ankündigungen filtern basierend auf !new-an und !stop
     function filterContent(content) {
+        if (!content) return ''; // Wenn content undefined oder null ist, leere Zeichenkette zurückgeben
+
         const newAnIndex = content.indexOf('!new-an');
         const stopIndex = content.indexOf('!stop');
 
@@ -111,6 +113,7 @@
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
+            console.log(data); // Überprüfe, ob alle Ankündigungen einen 'Content' haben
             const container = document.getElementById('announcements');
             container.innerHTML = ''; // Alte Inhalte entfernen
 
