@@ -74,7 +74,9 @@ footer {
     bottom: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-size: 2.5em;
     color: #00d8ff;
     text-align: center;
@@ -97,8 +99,13 @@ body::after {
 }
 
 @keyframes backgroundAnimation {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 100%; }
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 /* Abschnitte */
@@ -179,7 +186,8 @@ form {
     margin-top: 20px;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #00d8ff;
@@ -195,4 +203,221 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #009cba;
+}
+
+/* Server Status Bereich */
+#online-players {
+    margin-top: 20px;
+}
+
+#players-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#players-list .player {
+    margin: 10px;
+    text-align: center;
+}
+
+#players-list .player img {
+    border-radius: 50%;
+}
+
+#players-list .player span {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+#server-status {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#server-status h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#status-message {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+#server-status p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+#server-ip,
+#players-online,
+#motd {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#server-status p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#server-status p a:hover {
+    text-decoration: underline;
+}
+
+/* Farbliche Unterschiede für den Status */
+#status-message {
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#status-message.online {
+    background-color: #28a745;
+    /* Grün für Online */
+}
+
+#status-message.offline {
+    background-color: #dc3545;
+    /* Rot für Offline */
+}
+
+/* Stil für den TNT-Block */
+.tnt-block {
+    width: 100px;
+    height: 100px;
+    background-image: url('tnt-explode.png');
+    background-size: cover;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.5s ease-in-out;
+    /* Übergang beim Wechsel der Bilder */
+}
+
+/* Stil für das GIF */
+.tnt-gif {
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    cursor: pointer;
+    margin-top: 20px;
+    background-image: url('tnt-explode.gif');
+    background-size: cover;
+}
+
+/* Stil für das Verstecken der Elemente */
+.hidden {
+    visibility: hidden;
+}
+
+/* Stil für den Bereich über den Owner */
+#about-owner {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.owner-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.owner-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+
+.textcolorgradient {
+    --bg-size: 400%;
+    --color-one: hsl(15 90% 55%);
+    --color-two: hsl(40 95% 55%);
+    font-family: sans-serif;
+    font-size: clamp(3rem, 25vmin, 8rem);
+    background: linear-gradient(90deg,
+            var(--color-one),
+            var(--color-two),
+            var(--color-one)) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+}
+
+#team {
+    margin-top: 40px;
+}
+
+.team-member {
+    background: rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    color: #fff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    color: #aaa;
+    font-size: 1.1em;
+}
+
+#team-empty {
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Flexbox für die Team-Mitglieder */
+#team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .textcolorgradient {
+        animation: move-bg 8s linear infinite;
+    }
+
+    @keyframes move-bg {
+        to {
+            background-position: var(--bg-size) 0;
+        }
+    }
 }

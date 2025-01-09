@@ -18,38 +18,57 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
 -->
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über Blockattack</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
-<header>
-    <nav>
-        <ul>
-            <li>
-                <a href="/" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="/favicon.ico" alt="Blockattack Logo" style="width: 32px; height: 32px; margin-right: 8px;">
-                    <span style="font-size: 1.5rem; font-weight: bold; color: #333;">Blockattack</span>
-                </a>
-            </li>
-            <li><a href="/about.html">Über uns</a></li>
-            <li><a href="/server.html">Server Info</a></li>
-        </ul>
-    </nav>
-</header>
+    <header
+        style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;">
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li>
+                    <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+                        <img src="/favicon.ico" alt="Blockattack Logo"
+                            style="width: 32px; height: 32px; margin-right: 8px;">
+                        <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
+                    </a>
+                </li>
+                <li><a href="/about.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Über uns</a>
+                </li>
+                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server
+                        Info</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button id="copy-ip-btn"
+                style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;">
+                Server IP kopieren
+            </button>
+        </div>
+    </header>
 
     <section id="about">
         <h2>Über Dr. Mifo und Blockattack</h2>
-        <p>Blockattack ist ein Minecraft Server, betrieben von YouTuber Dr. Mifo (@DrMifo). Hier kannst du nicht nur spannende Abenteuer erleben, sondern auch dein eigenes Land claimen, dich gegen andere Spieler verteidigen und viele weitere coole Features entdecken!</p>
+        <p>Blockattack ist ein Minecraft Server, betrieben von YouTuber Dr. Mifo (@DrMifo). Hier kannst du nicht nur
+            spannende Abenteuer erleben, sondern auch dein eigenes Land claimen, dich gegen andere Spieler verteidigen
+            und viele weitere coole Features entdecken!</p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Blockattack Server. Alle Rechte vorbehalten. Powered by mine-server.org. Website by TheErrorExe</p>
+        <p>&copy; BlockAttack 2025</p>
+        <p>Gehostet auf <a href="https://mine-server.org" target="_blank"
+                style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
+        <p>Website von <a href="https://errexe.xyz" target="_blank"
+                style="color: inherit; text-decoration: inherit;">TheErrorExe</a></p>
         <br>
-                <a href="/privacy.html" style="display: inline;">Privacy</a><p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
-
+        <a href="/privacy.html" style="display: inline;">Privacy</a>
+        <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
     </footer>
 </body>
+
 </html>

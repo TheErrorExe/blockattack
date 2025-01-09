@@ -1,81 +1,38 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockattack - Team</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/js/script.js" defer></script>
-    <style>
-        #team {
-            margin-top: 40px;
-        }
-
-        .team-member {
-            background: rgba(0, 0, 0, 0.3);
-            margin: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            width: 300px;
-            display: inline-block;
-            vertical-align: top;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .team-member:hover {
-            transform: scale(1.05);
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .team-member img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .team-member h3 {
-            color: #fff;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .team-member p {
-            color: #aaa;
-            font-size: 1.1em;
-        }
-
-        #team-empty {
-            color: #fff;
-            font-size: 1.5em;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        /* Flexbox für die Team-Mitglieder */
-        #team-members {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    </style>
 </head>
+
 <body>
-    <header>
+    <header
+        style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;">
         <nav>
-            <ul>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
                 <li>
-                    <a href="/" style="display: flex; align-items: center; text-decoration: none;">
-                        <img src="/favicon.ico" alt="Blockattack Logo" style="width: 32px; height: 32px; margin-right: 8px;">
-                        <span style="font-size: 1.5rem; font-weight: bold; color: #333;">Blockattack</span>
+                    <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+                        <img src="/favicon.ico" alt="Blockattack Logo"
+                            style="width: 32px; height: 32px; margin-right: 8px;">
+                        <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
                     </a>
                 </li>
-                <li><a href="/about.html">Über uns</a></li>
-                <li><a href="/server.html">Server Info</a></li>
+                <li><a href="/about.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Über uns</a>
+                </li>
+                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server
+                        Info</a></li>
             </ul>
         </nav>
+        <div>
+            <button id="copy-ip-btn"
+                style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;">
+                Server IP kopieren
+            </button>
+        </div>
     </header>
 
     <section id="team">
@@ -117,9 +74,15 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Blockattack Server. Alle Rechte vorbehalten. Powered by mine-server.org. Website by TheErrorExe</p>
+        <p>&copy; BlockAttack 2025</p>
+        <p>Gehostet auf <a href="https://mine-server.org" target="_blank"
+                style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
+        <p>Website von <a href="https://errexe.xyz" target="_blank"
+                style="color: inherit; text-decoration: inherit;">TheErrorExe</a></p>
         <br>
-        <a href="/privacy.html" style="display: inline;">Privacy</a><p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
+        <a href="/privacy.html" style="display: inline;">Privacy</a>
+        <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
     </footer>
 </body>
+
 </html>
