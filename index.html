@@ -60,6 +60,18 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
         <p>Verbinde dich jetzt: <strong>blockattack.fun</strong></p>
         <p><em>Jetzt die neuesten Features wie das Claimen von Gebieten ausprobieren!</em></p>
     </section>
+    <section id="server-status">
+        <h2>Server Status</h2>
+        <div id="status-message">Lade Serverstatus...</div>
+        <div id="server-info" style="display:none;">
+            <p id="players-online"><span></span></p>
+            <p id="motd"><span></span></p>
+            <p id="version"><span></span></p>
+        </div>
+        <div id="loading-spinner" style="display:block;">
+            <span class="loader"></span> Server wird überprüft...
+        </div>
+    </section>
     <section id="features">
         <h2>Warum Blockattack?</h2>
         <table style="margin-left: auto; margin-right: auto;">
@@ -115,69 +127,50 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
                 href="https://www.youtube.com/@DrMifo">Dr Mifo auf YouTube</a>
         </div>
     </section>
-    <section id="server-status">
-        <h2>Server Status</h2>
-        <p id="status-message">Lade Serverstatus...</p>
-        <p id="server-ip" style="display:none;"></p>
-        <p id="players-online" style="display:none;"></p>
-        <p id="motd" style="display:none;"></p>
-    </section>
 
     <script>
         // Minecraft Server Adresse
         const serverAddress = 'blockattack.fun'; // Ändere dies auf deine Serveradresse
 
         // API URL
-        const apiUrl = `https://api.mcsrvstat.us/3/${serverAddress}`;
+        const apiUrl = `https://api.mcstatus.io/v2/status/java/${serverAddress}`;
 
         // Abrufen des Serverstatus
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
                 const statusMessageElement = document.getElementById('status-message');
-                const serverIpElement = document.getElementById('server-ip');
-                const playersOnlineElement = document.getElementById('players-online');
-                const motdElement = document.getElementById('motd');
+                const serverInfoElement = document.getElementById('server-info');
+                const loadingSpinner = document.getElementById('loading-spinner');
 
+                // Zeige die Ladeanzeige und verstecke sie nach dem Abrufen
+                loadingSpinner.style.display = 'none';
+                serverInfoElement.style.display = 'block';
+
+                // Überprüfen, ob der Server online ist
                 if (data.online) {
-                    // Überprüfen, ob die MOTD das Wort "Wartung" enthält
-                    const motdText = data.motd.clean.join(" "); // Kombiniere alle Zeilen der MOTD
-                    if (motdText.toLowerCase().includes("wartung")) {
-                        // Wenn "Wartung" in der MOTD enthalten ist, wird der Server als offline angezeigt
-                        statusMessageElement.innerText = 'Server ist in Wartung!';
-                        statusMessageElement.classList.remove("online");
-                        statusMessageElement.classList.add("offline");
-                    } else {
-                        // Wenn der Server online ist und keine Wartung angezeigt wird
-                        statusMessageElement.innerText = 'Server ist Online!';
-                        statusMessageElement.classList.remove("offline");
-                        statusMessageElement.classList.add("online");
-                    }
+                    statusMessageElement.innerText = 'Server ist Online!';
+                    statusMessageElement.classList.remove("offline");
+                    statusMessageElement.classList.add("online");
 
-                    // Server-IP und Spieleranzahl anzeigen
-                    serverIpElement.innerText = `IP: ${data.ip}`;
-                    playersOnlineElement.innerText = `Spieler Online: ${data.players.online} / ${data.players.max}`;
-                    motdElement.innerText = `MOTD: ${data.motd.clean.join(' ')}`;
+                    document.getElementById('players-online').innerHTML = `<span><strong>Spielerzahl:</strong> ${data.players.online} / ${data.players.max}</span>`;
+                    document.getElementById('motd').innerHTML = `<span><strong>MOTD:</strong> ${data.motd.html}</span>`;
+                    document.getElementById('version').innerHTML = `<span><strong>Version:</strong> ${data.version.name_clean}</span>`;
+
                 } else {
-                    // Server ist offline
                     statusMessageElement.innerText = 'Server ist Offline!';
                     statusMessageElement.classList.remove("online");
                     statusMessageElement.classList.add("offline");
 
-                    // Nur die IP anzeigen
-                    serverIpElement.innerText = `IP: ${data.ip}`;
+                    document.getElementById('host').innerHTML = `<span>${data.ip_address}</span>`;
                 }
-
-                // Zeige die Informationen an
-                serverIpElement.style.display = 'block';
-                playersOnlineElement.style.display = 'block';
-                motdElement.style.display = 'block';
             })
             .catch(error => {
                 // Fehler beim Abrufen der Daten
                 document.getElementById('status-message').innerText = 'Fehler beim Abrufen des Serverstatus.';
                 console.error('Fehler:', error);
             });
+
     </script>
 
     <section id="home" style="display: flex; justify-content: center; align-items: center; text-align: center;">
@@ -197,7 +190,6 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
             style="border: none; width: 100%; height: 600px; max-width: 100%; margin-left: auto; margin-right: auto;">
         </iframe>
     </section>
-
 
     <br><br><br><br><br><br><br><br><br><br><br><br>
 
