@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockattack - Team</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+    <style>
+        #team {
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background: rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            color: #fff;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            color: #aaa;
+            font-size: 1.1em;
+        }
+
+        #team-empty {
+            color: #fff;
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+                        <img src="/favicon.ico" alt="Blockattack Logo" style="width: 32px; height: 32px; margin-right: 8px;">
+                        <span style="font-size: 1.5rem; font-weight: bold; color: #333;">Blockattack</span>
+                    </a>
+                </li>
+                <li><a href="/about.html">Über uns</a></li>
+                <li><a href="/server.html">Server Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="team">
+        <h1 style="text-align: center; color: #00d8ff; margin-bottom: 40px;">Lerne das Blockattack Team kennen</h1>
+
+        <div id="team-members">
+            <div class="team-member">
+                <img src="/drmifo.jpg" alt="Dr. Mifo">
+                <h3>Dr. Mifo</h3>
+                <p>Owner</p>
+                <p>Owner des Blockattack Minecraft Servers.</p>
+            </div>
+            <div class="team-member">
+                <img src="/very.jpg" alt="VeryUmbrella">
+                <h3>VeryUmbrealla</h3></h3>
+                <p>Leitung</p>
+                <p>Aktuelle Leitung des Servers (alte Leitung war gmrrh).</p>
+            </div>
+            <div class="team-member">
+                <img src="/danino.jpg" alt="Danino">
+                <h3>Danino</h3>
+                <p>Moderator</p>
+                <p>Ein Moderator.</p>
+            </br>
+                <div class="team-member">
+                <img src="/kraftwerk.jpg" alt="Kraftwerk">
+                <h3>AtomKraftwerk42</h3>
+                <p>Supporter</p>
+                <p>Ein Supporter.</p>
+            </div>
+              <div class="team-member">
+                <img src="/whitecrafter.jpg" alt="Whitecrafter44">
+                <h3>Whitecraft44</h3>
+                <p>Supporter</p>
+                <p>Ein Supporter.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Blockattack Server. Alle Rechte vorbehalten. Powered by mine-server.org. Website by TheErrorExe</p>
+        <br>
+        <a href="/privacy.html" style="display: inline;">Privacy</a><p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
+    </footer>
+</body>
+</html>
