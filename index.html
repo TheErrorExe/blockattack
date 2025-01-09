@@ -100,18 +100,11 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
             </tr>
         </table>
     </section>
-    <!-- Der TNT Block -->
-    <section id="tnt-section">
-        <h2>Klick auf das TNT</h2>
-        <div id="tnt" class="tnt-block" onclick="triggerTNT()"></div>
-        <div id="tntGif" class="tnt-gif"></div>
-    </section>
 
     <section id="home">
         <br>
         <iframe src="https://discord.com/widget?id=1220023443391643830&theme=dark" width="350" height="500"
             allowtransparency="true" frameborder="0"></iframe>
-        <!-- a onclick="discord()" style="color: blue; text-decoration: underline;">Trete den Discord bei</a -->
         <br>
         <br>
     </section>
@@ -124,18 +117,15 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
                 Freunden irgend was unternehmen und noch vieles mehr. Mein Größter Wunsch auf Youtube ist irgendwann mal
                 die 1 Mio. Abos zu schaffen. Ich aktzeptiere alle die auf meinen Kanal sind bzw. im Chat sind. Wenn ihr
                 mir helfen wollt mein Traum zu Verwirklichen dann lasst gerne ein Abo da: </p><a style="display: inline"
-                href="https://www.youtube.com/@DrMifo">Dr Mifo auf YouTube</a>
+                href="https://www.youtube.com/@DrMifo">Dr. Mifo auf YouTube</a>
         </div>
     </section>
 
     <script>
-        // Minecraft Server Adresse
-        const serverAddress = 'blockattack.fun'; // Ändere dies auf deine Serveradresse
+        const serverAddress = 'blockattack.fun';
 
-        // API URL
         const apiUrl = `https://api.mcstatus.io/v2/status/java/${serverAddress}`;
 
-        // Abrufen des Serverstatus
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
@@ -143,11 +133,9 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
                 const serverInfoElement = document.getElementById('server-info');
                 const loadingSpinner = document.getElementById('loading-spinner');
 
-                // Zeige die Ladeanzeige und verstecke sie nach dem Abrufen
                 loadingSpinner.style.display = 'none';
                 serverInfoElement.style.display = 'block';
 
-                // Überprüfen, ob der Server online ist
                 if (data.online) {
                     statusMessageElement.innerText = 'Server ist Online!';
                     statusMessageElement.classList.remove("offline");
@@ -166,7 +154,6 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
                 }
             })
             .catch(error => {
-                // Fehler beim Abrufen der Daten
                 document.getElementById('status-message').innerText = 'Fehler beim Abrufen des Serverstatus.';
                 console.error('Fehler:', error);
             });
@@ -204,16 +191,14 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
         <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
     </footer>
     <script>
-        //Folgendes fügt die kopieren funktionalität des IP Adresse Button hinzu
         document.getElementById("copy-ip-btn").addEventListener("click", function () {
-            const serverIP = "blockattack.fun"; // Beispiel IP-Adresse
+            const serverIP = "blockattack.fun";
             navigator.clipboard.writeText(serverIP).then(function () {
                 alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß 😃🥰");
             }).catch(function (err) {
                 console.error("Fehler beim Kopieren der IP: ", err);
             });
         });
-        // Hardcodierte Beschreibungen für jedes Feature
         document.querySelectorAll('.card').forEach(card => {
             card.addEventListener('click', () => {
                 const featureName = card.getAttribute('data-feature');
@@ -233,43 +218,6 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
             });
         });
 
-        // TNT-Trigger und Animationsfunktion
-        function triggerTNT() {
-            const tntBlock = document.getElementById('tnt');
-            const tntGif = document.getElementById('tntGif');
-            const allElements = document.querySelectorAll('body *:not(#tntGif)'); // Alle Elemente außer dem GIF
-
-            // Spiele den TNT Boom Sound ab
-            const boomSound = new Audio('tnt-boom.mp3');
-            boomSound.play();
-
-            // Ersetze das PNG durch das GIF
-            tntBlock.style.backgroundImage = "url('tnt-explode.gif')";
-            tntGif.style.display = 'block'; // Zeige das GIF an
-
-            // Verstecke alle anderen Elemente nach 4 Sekunden
-            setTimeout(() => {
-                allElements.forEach(el => {
-                    el.classList.add('hidden');
-                });
-            }, 4000);
-
-            // Nach 4 Sekunden das PNG wiederherstellen und das GIF entfernen
-            setTimeout(() => {
-                tntBlock.style.backgroundImage = "url('tnt-explode.png')";
-                tntGif.style.display = 'none'; // Entferne das GIF
-
-                // Neuladen der Seite
-                location.reload();
-            }, 12000); // Warte 12 Sekunden (4s Sound + 7s Unsichtbarkeit + 1s GIF Anzeige)
-
-            // Nach 11 Sekunden alle Elemente wieder sichtbar machen
-            setTimeout(() => {
-                allElements.forEach(el => {
-                    el.classList.remove('hidden');
-                });
-            }, 11000);
-        }
     </script>
 </body>
 
