@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nachrichten - Blockattack</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script>
+        async function loadNews() {
+            try {
+                const response = await fetch('https://api.errexe.xyz/blockattack-api/news/get');
+                const news = await response.json();
+
+                const newsContainer = document.getElementById('news-container');
+                newsContainer.innerHTML = '';
+
+                news.forEach(item => {
+                    const newsItem = document.createElement('div');
+                    newsItem.style.border = '1px solid #ddd';
+                    newsItem.style.padding = '10px';
+                    newsItem.style.margin = '10px 0';
+
+                    const title = document.createElement('h3');
+                    title.textContent = item.title;
+
+                    const author = document.createElement('p');
+                    author.textContent = `Author: ${item.author}`;
+                    author.style.fontStyle = 'italic';
+
+                    const content = document.createElement('p');
+                    content.textContent = item.content;
+
+                    newsItem.appendChild(title);
+                    newsItem.appendChild(author);
+                    newsItem.appendChild(content);
+
+                    newsContainer.appendChild(newsItem);
+                });
+            } catch (error) {
+                console.error('Fehler beim Laden der Daten:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadNews);
+    </script>
+</head>
+
+<body>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;">
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li>
+                    <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+                        <img src="/favicon.ico" alt="Blockattack Logo" style="width: 32px; height: 32px; margin-right: 8px;">
+                        <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
+                    </a>
+                </li>
+                <li><a href="/about.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Über uns</a></li>
+                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server Info</a></li>
+                <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding: 20px;">
+        <h1>Aktuelle Neuigkeiten</h1>
+        <div id="news-container">Fetching data...</div>
+    </main>
+
+    <footer>
+        <p>&copy; BlockAttack 2025</p>
+        <p>Gehostet auf <a href="https://mine-server.org" target="_blank" style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
+        <p>Website von <a href="https://errexe.xyz" target="_blank" style="color: inherit; text-decoration: inherit;">TheErrorExe</a></p>
+    </footer>
+</body>
+
+</html>
