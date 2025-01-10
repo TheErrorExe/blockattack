@@ -117,6 +117,7 @@ async function loadNews() {
                 newsElement.innerHTML = `
                     <h3>${newsItem.title}</h3>
                     <p>${newsItem.content}</p>
+                    <p class="news-author">Von: <span>${newsItem.author}</span></p>
                 `;
 
                 newsContainer.appendChild(newsElement);
@@ -129,6 +130,7 @@ async function loadNews() {
 }
 
 loadNews();
+
 
     </script>
     <section id="news-section" style="margin-bottom: 50px; border-bottom: 2px solid #ccc; padding-bottom: 20px;">
