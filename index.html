@@ -61,9 +61,41 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
         <p>Verbinde dich jetzt: <strong>blockattack.fun</strong></p>
         <p><em>Jetzt die neuesten Features wie das Claimen von Gebieten ausprobieren!</em></p>
     </section>
+    <script>
+        async function loadNews() {
+    try {
+        const response = await fetch('https://api.errexe.xyz/blockattack-api/news/get');
+        const data = await response.json();
+
+        const newsContainer = document.getElementById('news-container');
+        newsContainer.innerHTML = '';
+
+        
+        const latestNews = data.slice(0, 2);
+
+        if (latestNews.length === 0) {
+            newsContainer.innerHTML = 'Keine Neuigkeiten verfügbar.';
+        } else {
+            latestNews.forEach(newsItem => {
+                const newsElement = document.createElement('div');
+                newsElement.innerHTML = `<h3>${newsItem.title}</h3><p>${newsItem.content}</p>`;
+                newsContainer.appendChild(newsElement);
+            });
+        }
+    } catch (error) {
+        console.error('Fehler beim Laden der Neuigkeiten:', error);
+        document.getElementById('news-container').innerHTML = 'Fehler beim Laden der Neuigkeiten.';
+    }
+}
+
+    </script>
     <section id="news-section" style="margin-bottom: 50px; border-bottom: 2px solid #ccc; padding-bottom: 20px;">
-    <h2>Neuigkeiten</h2>
-    <br>
+        <main style="padding: 20px;">
+    <h1>Aktuelle Neuigkeiten</h1>
+    <div id="news-container">Fetching data...</div>
+</main>
+
+    <br><br>
     <a href="/news.html"
         style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;">
         Mehr anzeigen...
