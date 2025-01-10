@@ -15,6 +15,9 @@
                 const newsContainer = document.getElementById('news-container');
                 newsContainer.innerHTML = '';
 
+                // Reihenfolge umkehren
+                news.reverse();
+
                 news.forEach(item => {
                     const newsItem = document.createElement('div');
                     newsItem.style.border = '1px solid #ddd';
@@ -59,7 +62,6 @@
                 <li><a href="/about.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Über uns</a></li>
                 <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server Info</a></li>
                 <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
-
             </ul>
         </nav>
     </header>
