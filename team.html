@@ -11,25 +11,6 @@
                 console.error("Fehler beim Kopieren der IP: ", err);
             });
         });
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', () => {
-                const featureName = card.getAttribute('data-feature');
-                switch (featureName) {
-                    case "Gebietsclaiming":
-                        alert("Claime ganz einfach ein Gebiet mit /f claim und baue dein eigenes Land.");
-                        break;
-                    case "PVP-Kämpfe":
-                        alert("Mach Kämpfe gegen andere Spieler des Blockattack Servers!");
-                        break;
-                    case "Events":
-                        alert("Beteilige dich bei Events!");
-                        break;
-                    default:
-                        alert("Feature nicht gefunden.");
-                }
-            });
-        });
-
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +31,6 @@
                         <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
                     </a>
                 </li>
-                <li><a href="/about.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Über uns</a>
                 </li>
                 <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server
                         Info</a></li>

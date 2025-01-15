@@ -29,25 +29,6 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
                 console.error("Fehler beim Kopieren der IP: ", err);
             });
         });
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', () => {
-                const featureName = card.getAttribute('data-feature');
-                switch (featureName) {
-                    case "Gebietsclaiming":
-                        alert("Claime ganz einfach ein Gebiet mit /f claim und baue dein eigenes Land.");
-                        break;
-                    case "PVP-Kämpfe":
-                        alert("Mach Kämpfe gegen andere Spieler des Blockattack Servers!");
-                        break;
-                    case "Events":
-                        alert("Beteilige dich bei Events!");
-                        break;
-                    default:
-                        alert("Feature nicht gefunden.");
-                }
-            });
-        });
-
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +48,6 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
                         <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
                     </a>
                 </li>
-                <li><a href="/about.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Über uns</a>
                 </li>
                 <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server
                         Info</a></li>
@@ -94,6 +74,57 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
             <li>Events und regelmäßige Updates</li>
         </ul>
     </section>
+    <section id="server-status">
+        <h2>Server Status</h2>
+        <div id="status-message">Lade Serverstatus...</div>
+        <div id="server-info" style="display:none;">
+            <p id="players-online"><span></span></p>
+            <p id="motd"><span></span></p>
+            <p id="version"><span></span></p>
+        </div>
+        <div id="loading-spinner" style="display:block;">
+            <span class="loader"></span> Server wird überprüft...
+        </div>
+    </section>
+
+    <script>
+        const serverAddress = 'blockattack.fun';
+
+        const apiUrl = `https://api.mcstatus.io/v2/status/java/${serverAddress}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const statusMessageElement = document.getElementById('status-message');
+                const serverInfoElement = document.getElementById('server-info');
+                const loadingSpinner = document.getElementById('loading-spinner');
+
+                loadingSpinner.style.display = 'none';
+                serverInfoElement.style.display = 'block';
+
+                if (data.online) {
+                    statusMessageElement.innerText = 'Server ist Online!';
+                    statusMessageElement.classList.remove("offline");
+                    statusMessageElement.classList.add("online");
+
+                    document.getElementById('players-online').innerHTML = `<span><strong>Spielerzahl:</strong> ${data.players.online} / ${data.players.max}</span>`;
+                    document.getElementById('motd').innerHTML = `<span><strong>MOTD:</strong> ${data.motd.html}</span>`;
+                    document.getElementById('version').innerHTML = `<span><strong>Version:</strong> ${data.version.name_clean}</span>`;
+
+                } else {
+                    statusMessageElement.innerText = 'Server ist Offline!';
+                    statusMessageElement.classList.remove("online");
+                    statusMessageElement.classList.add("offline");
+
+                    document.getElementById('host').innerHTML = `<span>${data.ip_address}</span>`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('status-message').innerText = 'Fehler beim Abrufen des Serverstatus.';
+                console.error('Fehler:', error);
+            });
+
+    </script>
 
     <footer>
         <p>&copy; BlockAttack 2025</p>
