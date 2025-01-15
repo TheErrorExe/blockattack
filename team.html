@@ -2,6 +2,35 @@
 <html lang="de">
 
 <head>
+    <script>
+        document.getElementById("copy-ip-btn").addEventListener("click", function () {
+            const serverIP = "blockattack.fun";
+            navigator.clipboard.writeText(serverIP).then(function () {
+                alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß 😃🥰");
+            }).catch(function (err) {
+                console.error("Fehler beim Kopieren der IP: ", err);
+            });
+        });
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const featureName = card.getAttribute('data-feature');
+                switch (featureName) {
+                    case "Gebietsclaiming":
+                        alert("Claime ganz einfach ein Gebiet mit /f claim und baue dein eigenes Land.");
+                        break;
+                    case "PVP-Kämpfe":
+                        alert("Mach Kämpfe gegen andere Spieler des Blockattack Servers!");
+                        break;
+                    case "Events":
+                        alert("Beteilige dich bei Events!");
+                        break;
+                    default:
+                        alert("Feature nicht gefunden.");
+                }
+            });
+        });
+
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockattack - Team</title>
