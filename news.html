@@ -44,7 +44,7 @@ async function loadNews() {
         const newsContainer = document.getElementById('news-container');
         newsContainer.innerHTML = '';
 
-        // Select the last two news items
+
         const latestNews = data.slice(-2);
 
         if (latestNews.length === 0) {
@@ -84,7 +84,6 @@ loadNews();
                         <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
                     </a>
                 </li>
-                <li><a href="/about.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Über uns</a></li>
                 <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server Info</a></li>
                 <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
             </ul>
