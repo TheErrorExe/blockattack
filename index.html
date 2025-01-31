@@ -276,6 +276,8 @@ loadNews();
                 style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
         <p>Website von <a href="https://errexe.xyz" target="_blank"
                 style="color: inherit; text-decoration: inherit;">TheErrorExe</a></p>
+                <p style="display: inline;"> und <a href="https://github.com/GomorrhaDev" target="_blank"
+                    style="color: inherit; text-decoration: inherit;  display: inline;">GomorrhaDev</a></p>
         <br>
         <a href="/privacy.html" style="display: inline;">Privacy</a>
         <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
@@ -284,7 +286,7 @@ loadNews();
         document.getElementById("copy-ip-btn").addEventListener("click", function () {
             const serverIP = "blockattack.fun";
             navigator.clipboard.writeText(serverIP).then(function () {
-                alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß 😃🥰");
+                alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß 😃");
             }).catch(function (err) {
                 console.error("Fehler beim Kopieren der IP: ", err);
             });
