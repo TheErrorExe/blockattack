@@ -17,7 +17,6 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
 
 -->
 */
-/* Reset und grundlegende Stile */
 * {
     margin: 0;
     padding: 0;
@@ -83,10 +82,8 @@ h3 {
     margin: 20px 0;
 }
 
-/* Animierte Hintergründe */
 body::after {
     content: '';
-    background: url('https://www.w3schools.com/w3images/space.jpg') no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -108,7 +105,6 @@ body::after {
     }
 }
 
-/* Abschnitte */
 section {
     margin: 40px auto;
     padding: 20px;
@@ -125,7 +121,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Cards Layout */
 .card {
     background: rgba(0, 0, 0, 0.3);
     margin: 20px;
@@ -163,7 +158,6 @@ h2 {
     color: #aaa;
 }
 
-/* Buttons */
 button {
     background-color: #00d8ff;
     padding: 15px 30px;
@@ -179,7 +173,6 @@ button:hover {
     background-color: #009cba;
 }
 
-/* Formular */
 form {
     display: flex;
     flex-direction: column;
@@ -205,7 +198,6 @@ input[type="submit"]:hover {
     background-color: #009cba;
 }
 
-/* Server Status Bereich */
 #server-status {
     font-family: 'Arial', sans-serif;
     padding: 20px;
@@ -272,36 +264,10 @@ input[type="submit"]:hover {
 }
 
 
-/* Stil für den TNT-Block */
-.tnt-block {
-    width: 100px;
-    height: 100px;
-    background-image: url('tnt-explode.png');
-    background-size: cover;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background 0.5s ease-in-out;
-    /* Übergang beim Wechsel der Bilder */
-}
-
-/* Stil für das GIF */
-.tnt-gif {
-    display: none;
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    cursor: pointer;
-    margin-top: 20px;
-    background-image: url('tnt-explode.gif');
-    background-size: cover;
-}
-
-/* Stil für das Verstecken der Elemente */
 .hidden {
     visibility: hidden;
 }
 
-/* Stil für den Bereich über den Owner */
 #about-owner {
     margin-top: 30px;
     text-align: center;
@@ -384,7 +350,6 @@ input[type="submit"]:hover {
     margin-top: 50px;
 }
 
-/* Flexbox für die Team-Mitglieder */
 #team-members {
     display: flex;
     flex-wrap: wrap;
