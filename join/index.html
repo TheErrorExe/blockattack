@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockattack - Beitrittsguide</title>
+    <link rel="stylesheet" href="https://www.blockattack.fun/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+</head>
+
+<body>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;">
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li>
+                    <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+                        <img src="/favicon.ico" alt="Blockattack Logo" style="width: 32px; height: 32px; margin-right: 8px;">
+                        <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
+                    </a>
+                </li>
+                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server Info</a></li>
+                <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
+                <li><a href="/guide.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Beitrittsguide</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button id="copy-ip-btn" style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;">
+                Server IP kopieren
+            </button>
+        </div>
+    </header>
+
+    <section id="guide">
+        <h1>Beitrittsguide für Blockattack</h1>
+        <p>Hier findest du eine Schritt-für-Schritt-Anleitung, wie du dem Blockattack-Server beitreten kannst, basierend auf deiner Plattform.</p>
+
+        <h2>Java Edition (PC)</h2>
+        <ol>
+            <li>Öffne Minecraft und klicke auf "Multiplayer".</li>
+            <li>Klicke auf "Server hinzufügen".</li>
+            <li>Gib die Serveradresse <strong>blockattack.fun</strong> ein.</li>
+            <li>Klicke auf "Fertig" und dann auf "Server beitreten".</li>
+        </ol>
+        <!-- ich plane noch bilder einzubauen , ich mach es später <img src="/images/guide1.jpg" alt="Bedrock Edition Guide" style="width: 100%; max-width: 600px; margin: 20px 0;"> -->
+
+      <h2>Bedrock Edition auf Konsolen (Nintendo Switch, Playstation 4/5 Xbox One, Xbox Series X/S</h2>
+        <ol>
+            <li>Öffne Minecraft und gehe zu "Spielen".</li>
+            <li>Klicke auf "Freunde" und dann auf "Freund hinzufügen".</li>
+            <li>Gib den Spielernamen <strong>Blockattack.fun</strong> ein und klich auf Hinzufügen.</li>
+            <li>Warte bis zu 20 Sekunden, gehe zu "Spielen" und geh auf Blockattack. Falls ein Fehler mit "Floodgate" kommt oder "Geyser" versuche es erneut bis es klappt.</li>
+        </ol>
+        <!-- ich plane noch bilder einzubauen , ich mach es später <img src="/images/guide2.jpg" alt="Bedrock Edition Guide" style="width: 100%; max-width: 600px; margin: 20px 0;"> -->
+
+        <h2>Bedrock Edition auf Windows 10/11, Mobile</h2>
+        <ol>
+            <li>Öffne Minecraft und gehe zu "Spielen".</li>
+            <li>Klicke auf "Server" und dann auf "Server hinzufügen".</li>
+            <li>Gib die Serveradresse <strong>blockattack.fun</strong> und den Port <strong>25515</strong> ein.</li>
+            <li>Speichere die Einstellungen und trete dem Server bei.</li>
+        </ol>
+        <!-- ich plane noch bilder einzubauen , ich mach es später <img src="/images/guide3.jpg" alt="Bedrock Edition Guide" style="width: 100%; max-width: 600px; margin: 20px 0;"> -->
+
+        <h2>Probleme beim Beitritt?</h2>
+        <p>Falls du Probleme hast, dem Server beizutreten, überprüfe bitte folgende Punkte:</p>
+        <ul>
+            <li>Stelle sicher, dass du die neueste Version von Minecraft verwendest.</li>
+            <li>Überprüfe deine Internetverbindung.</li>
+            <li>Falls der Server offline ist, versuche es später erneut.</li>
+          <li>Prüfe ob du den Freundes namen oder Server namen komplett und richtig eingetippt hast</li>
+        </ul>
+        <p>Falls die Probleme weiterhin bestehen, kontaktiere uns gerne auf unserem <a href="https://discord.gg/ARDHyKxtpH">Discord-Server</a>.</p>
+    </section>
+<br><br><br><br>
+    <footer>
+        <p>&copy; BlockAttack 2025</p>
+        <p>Gehostet auf <a href="https://mine-server.org" target="_blank" style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
+        <p>Website von <a href="https://errexe.xyz" target="_blank" style="color: inherit; text-decoration: inherit;">TheErrorExe</a></p>
+        <p style="display: inline;"> und <a href="https://github.com/GomorrhaDev" target="_blank" style="color: inherit; text-decoration: inherit; display: inline;">GomorrhaDev</a></p>
+        <br>
+        <a href="/privacy.html" style="display: inline;">Privacy</a>
+        <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
+    </footer>
+
+    <script>
+        document.getElementById("copy-ip-btn").addEventListener("click", function () {
+            const serverIP = "blockattack.fun";
+            navigator.clipboard.writeText(serverIP).then(function () {
+                alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß 😃");
+            }).catch(function (err) {
+                console.error("Fehler beim Kopieren der IP: ", err);
+            });
+        });
+    </script>
+</body>
+
+</html>
