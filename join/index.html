@@ -8,79 +8,29 @@
     <link rel="stylesheet" href="https://www.blockattack.fun/static/css/style.css">
     <script src="/static/js/script.js" defer></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #333;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-        }
-
         #guide {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-        }
-
-        footer a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+            text-align: center; /* Nur den Text mittig ausrichten */
         }
     </style>
 </head>
 
 <body>
-    <header>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;">
         <nav>
-            <ul>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
                 <li>
-                    <a href="/">
+                    <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
                         <img src="/favicon.ico" alt="Blockattack Logo" style="width: 32px; height: 32px; margin-right: 8px;">
                         <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
                     </a>
                 </li>
-                <li><a href="/server.html">Server Info</a></li>
-                <li><a href="/news.html">Neuigkeiten</a></li>
-                <li><a href="/guide.html">Beitrittsguide</a></li>
+                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server Info</a></li>
+                <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
+                <li><a href="/guide.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Beitrittsguide</a></li>
             </ul>
         </nav>
         <div>
-            <button id="copy-ip-btn">
+            <button id="copy-ip-btn" style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;">
                 Server IP kopieren
             </button>
         </div>
@@ -97,6 +47,7 @@
             <li>Gib die Serveradresse <strong>blockattack.fun</strong> ein.</li>
             <li>Klicke auf "Fertig" und dann auf "Server beitreten".</li>
         </ol>
+        <!-- ich plane noch bilder einzubauen , ich mach es später <img src="/images/guide1.jpg" alt="Bedrock Edition Guide" style="width: 100%; max-width: 600px; margin: 20px 0;"> -->
 
         <h2>Bedrock Edition auf Konsolen (Nintendo Switch, Playstation 4/5 Xbox One, Xbox Series X/S)</h2>
         <ol>
@@ -105,6 +56,7 @@
             <li>Gib den Spielernamen <strong>Blockattackfun</strong> ein und klicke auf Hinzufügen.</li>
             <li>Warte bis zu 20 Sekunden, gehe zu "Spielen" und geh auf Blockattack. Falls ein Fehler mit "Floodgate" kommt oder "Geyser" versuche es erneut bis es klappt.</li>
         </ol>
+        <!-- ich plane noch bilder einzubauen , ich mach es später <img src="/images/guide2.jpg" alt="Bedrock Edition Guide" style="width: 100%; max-width: 600px; margin: 20px 0;"> -->
 
         <h2>Bedrock Edition auf Windows 10/11, Mobile</h2>
         <ol>
@@ -113,6 +65,7 @@
             <li>Gib die Serveradresse <strong>blockattack.fun</strong> und den Port <strong>25515</strong> ein.</li>
             <li>Speichere die Einstellungen und trete dem Server bei.</li>
         </ol>
+        <!-- ich plane noch bilder einzubauen , ich mach es später <img src="/images/guide3.jpg" alt="Bedrock Edition Guide" style="width: 100%; max-width: 600px; margin: 20px 0;"> -->
 
         <h2>Probleme beim Beitritt?</h2>
         <p>Falls du Probleme hast, dem Server beizutreten, überprüfe bitte folgende Punkte:</p>
@@ -127,10 +80,12 @@
 
     <footer>
         <p>&copy; BlockAttack 2025</p>
-        <p>Gehostet auf <a href="https://mine-server.org" target="_blank">mine-server.org</a></p>
-        <p>Website von <a href="https://errexe.xyz" target="_blank">TheErrorExe</a> und <a href="https://github.com/GomorrhaDev" target="_blank">GomorrhaDev</a></p>
+        <p>Gehostet auf <a href="https://mine-server.org" target="_blank" style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
+        <p>Website von <a href="https://errexe.xyz" target="_blank" style="color: inherit; text-decoration: inherit;">TheErrorExe</a></p>
+        <p style="display: inline;"> und <a href="https://github.com/GomorrhaDev" target="_blank" style="color: inherit; text-decoration: inherit; display: inline;">GomorrhaDev</a></p>
         <br>
-        <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms of Service</a>
+        <a href="/privacy.html" style="display: inline;">Privacy</a>
+        <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
     </footer>
 
     <script>
