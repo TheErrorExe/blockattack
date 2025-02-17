@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: 
+User-agent: *
+Disallow: 
+Disallow: /terms.html
+Disallow: /privacy.html
+Sitemap: https://www.blockattack.fun/static/sitemap.xml
