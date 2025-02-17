@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockattack - Bildergalerie</title>
+    <link rel="stylesheet" href="https://www.blockattack.fun/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+    <script>
+        document.getElementById("copy-ip-btn").addEventListener("click", function () {
+            const serverIP = "blockattack.fun";
+            navigator.clipboard.writeText(serverIP).then(function () {
+                alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß 😃");
+            }).catch(function (err) {
+                console.error("Fehler beim Kopieren der IP: ", err);
+            });
+        });
+    </script>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header
+    style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;">
+    <nav>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+            <li>
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+                    <img src="/favicon.ico" alt="Blockattack Logo"
+                        style="width: 32px; height: 32px; margin-right: 8px;">
+                    <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
+                </a>
+            </li>
+            </li>
+            <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server
+                    Info</a></li>
+            <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
+                            <li><a href="/guide.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Beitrittsguide</a></li>
+                            <li><a href="/bilder.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Bildergalerie</a></li>
+        </ul>
+    </nav>
+    <div>
+        <button id="copy-ip-btn"
+            style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;">
+            Server IP kopieren
+        </button>
+    </div>
+</header>
+    <section id="galerie">
+        <h1 style="text-align: center; color: #00d8ff;">Bildergalerie von Blockattack</h1>
+        <div class="gallery">
+            <img src="/galerie-img/1.png" alt="Bild 1" onclick="openModal(this.src)">
+            <img src="/galerie-img/2.png" alt="Bild 2" onclick="openModal(this.src)">
+            <img src="/galerie-img/3.png" alt="Bild 3" onclick="openModal(this.src)">
+            <img src="/galerie-img/4.png" alt="Bild 4" onclick="openModal(this.src)">
+            <img src="/galerie-img/5.png" alt="Bild 4" onclick="openModal(this.src)">
+            <img src="/galerie-img/6.png" alt="Bild 4" onclick="openModal(this.src)">
+        </div>
+    </section>
+    <div class="modal" id="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modal-img">
+    </div>
+    <script>
+        function openModal(src) {
+            document.getElementById("modal").style.display = "flex";
+            document.getElementById("modal-img").src = src;
+        }
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+    <footer>
+        <p>&copy; BlockAttack 2025</p>
+        <p>Gehostet auf <a href="https://mine-server.org" target="_blank" style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
+        <p>Website von <a href="https://errexe.xyz" target="_blank" style="color: inherit; text-decoration: inherit;">TheErrorExe</a></p>
+        <p style="display: inline;"> und <a href="https://github.com/GomorrhaDev" target="_blank" style="color: inherit; text-decoration: inherit; display: inline;">GomorrhaDev</a></p>
+        <br>
+        <a href="/privacy.html" style="display: inline;">Privacy</a>
+        <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
+    </footer>
+</body>
+</html>
