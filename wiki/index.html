@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockattack Wiki</title>
+    <link rel="icon" href="https://blockattack.fun/wiki.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Linux+Libertine&display=swap">
+    <style>
+        body {
+            font-family: 'Linux Libertine', serif;
+            background-color: #f8f9fa;
+            color: #202122;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            border-bottom: 1px solid #a2a9b1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        #header img {
+            height: 50px;
+        }
+        #header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        #header .logo-container h1 {
+            margin-left: 10px;
+            font-size: 1.5em;
+            color: #000;
+        }
+        #menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+        }
+        #menu-toggle div {
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            margin: 3px 0;
+        }
+        #menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            background: white;
+            border: 1px solid #a2a9b1;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            width: 200px;
+        }
+        #menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #menu ul li {
+            margin: 5px 0;
+        }
+        #menu ul li a {
+            display: block;
+            padding: 5px;
+            color: #0645ad;
+            text-decoration: none;
+        }
+        #menu ul li a:hover {
+            background-color: #f1f1f1;
+        }
+        #content {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #a2a9b1;
+        }
+        h1, h2 {
+            color: #000;
+        }
+        #toc {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #a2a9b1;
+            margin-bottom: 20px;
+        }
+        #toc ul {
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+            color: #555;
+            border-top: 1px solid #a2a9b1;
+            background-color: #f8f9fa;
+            margin-top: 20px;
+        }
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <img src="https://blockattack.fun/wiki.ico" alt="Blockattack Wiki">
+            <h1>Blockattack Wiki</h1>
+        </div>
+        <button id="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <nav id="menu">
+            <ul>
+                <li><a href="/">Blockattack</a></li>
+                <li><a href="/join">Trete bei</a></li>
+                <li><a href="/wiki">Wiki</a></li>
+                <li><a href="#content">Skip</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="content">
+        <h1>Blockattack Wiki</h1>
+        <p>Willkommen bei der Blockattack-Wiki-Seite!</p>
+        
+        <div id="toc">
+            <strong>Inhaltsverzeichnis</strong>
+            <ul>
+                <li><a href="#beitritt">Wie trete ich dem Server bei?</a></li>
+                <li><a href="#voicechat">Wie benutze ich Voice Chat?</a></li>
+                <li><a href="#wirtschaft">Wirtschaftssystem erklärt</a></li>
+                <li><a href="#pvp">PvP-Regeln und Tipps</a></li>
+            </ul>
+        </div>
+        
+        <h2 id="beitritt">Wie trete ich dem Server bei?</h2>
+        <p>Um dem Blockattack-Server beizutreten, benötigst du die folgende IP-Adresse:</p>
+        <p><strong>Server IP:</strong> blockattack.fun</p>
+        <p>Falls du mit Bedrock spielst, nutze die IP <strong>bedrock.blockattack.fun</strong> und den Port <strong>25515</strong>.</p>
+        <a href="https://blockattack.fun/join">Mehr Infos und die Konsolen anleitung</a>
+        
+        <h2 id="voicechat">Wie benutze ich Voice Chat?</h2>
+        <p>Du möchtest Voice Chat auf Blockattack benutzen? Hier ist eine Anleitung. Zuerst wähle dein Client</p>
+        <ul>
+        <li><a href="#" onclick="showIframe('https://www.youtube.com/embed/9EOXBiaJlOA')">Lunarclient</a></li>
+        <li><a href="#" onclick="showIframe('https://www.youtube.com/watch?v=hyT8qcHSVP0')" >Feather</a></li>
+        <li><a href="#" onclick="/wiki/voicechat/vanilla.html">Normaler Minecraft Launcher (ohne Fabric oder Forge, einfach Vanilla)</a></li>
+        <li><a href="/wiki/voicechat/vanilla.html#simple-voice-chat">Fabric</a></li>
+        <li><a href="/wiki/voicechat/vanilla.html#simple-voice-chat">Forge wähle statt fabric forge) (für Curseforge klicke auf Lunarclient oben)</a></li>
+        <li><a href="#" onclick="newtab('https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat')">Ich weiß wie man Mods mit .jar Dateien installiert, gib mir einfach den Download</a></li>
+        </ul>
+        <p>Bedrock Spieler können keinen Voice Chat benutzen</p>
+        <p>Info für Modrinth APP Nutzer, sucht einfach nach der Mod bei Add Content</p>
+        
+        <h2 id="claims">Wie claimt man Land?</h2>
+        <p>Auf Blockattack kannst du dein eigenes Land beanspruchen, um es vor anderen Spielern zu schützen. Folge diesen Schritten:</p>
+        <ul>
+            <li>Benutze <code>/f create [Landname]</code>, um ein Land zu gründen oder <code>/f join [Landname]</code> wenn du eine Einladung zu einer anderen Faction bekommen hast.</li>
+            <li>Erweitere dein Gebiet mit <code>/f claim</code>.</li>
+            <li>Verwalte deine Claims mit <code>/f trust [Spielername]</code>, um Freunden Zugriff zu geben.</li>
+        </ul>
+        
+        <h2 id="wirtschaft">Wirtschaftssystem erklärt</h2>
+        <p>Blockattack besitzt ein einzigartiges Wirtschaftssystem mit eigener Währung.</p>
+        <ul>
+            <li>Verdiene Geld durch Handel mit anderen Spielern.</li>
+            <li>Klicke mit einem zu Item zu Verkaufen auf eine Kiste und gebe den Preis pro Stück im Chat ohne / an. Fülle die Truhe auf und verdiene dir Blockcoins!</li>
+            <li>Am Scoreboard (Die Leiste Rechts mit blockattack.fun, Geld, YouTube) kannst du deine Blockcoins sehen.</li>
+        </ul>
+        
+        <h2 id="pvp">PvP-Welt</h2>
+        <p>Es gibt eine PVP Welt. Achte hierbei auf:</p>
+        <ul>
+            <li>Das in der PVP Welt Items fallengelassen werden beim Sterben.</li>
+            <li>Du kannst beim Tod von anderen den Loot aufsammeln.</li>
+            <li>Du kommst zur PVP Welt mit <code>/warp pvp</code> oder am PVP NPC am Spawn.</li>
+        </ul>
+    </div>
+    
+    <footer>
+        <p>&copy; Blockattack 2025 | Seite von TheErrorExe.</p>
+        <a href="/">Zurück zur Hauptseite</a>
+    </footer>
+    <script>
+    function showIframe(url) {
+
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    overlay.style.zIndex = '9999';
+    
+
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.style.position = 'absolute';
+    iframe.style.top = '50%';
+    iframe.style.left = '50%';
+    iframe.style.transform = 'translate(-50%, -50%)';
+    iframe.style.width = '80%';
+    iframe.style.height = '80%';
+    iframe.style.border = 'none';
+    iframe.style.borderRadius = '8px';
+    
+
+    overlay.appendChild(iframe);
+    document.body.appendChild(overlay);
+    
+
+    overlay.addEventListener('click', function() {
+        document.body.removeChild(overlay);
+    });
+}
+
+function newtab(url) {
+    const newTab = window.open(url, "_blank");
+    if (newTab) {
+        newTab.focus();
+    } else {
+        console.log("Error creating new Tab");
+    }
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockattack Wiki</title>
+    <link rel="icon" href="https://blockattack.fun/wiki.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Linux+Libertine&display=swap">
+    <style>
+        body {
+            font-family: 'Linux Libertine', serif;
+            background-color: #f8f9fa;
+            color: #202122;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            border-bottom: 1px solid #a2a9b1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        #header img {
+            height: 50px;
+        }
+        #header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        #header .logo-container h1 {
+            margin-left: 10px;
+            font-size: 1.5em;
+            color: #000;
+        }
+        #menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+        }
+        #menu-toggle div {
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            margin: 3px 0;
+        }
+        #menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            background: white;
+            border: 1px solid #a2a9b1;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            width: 200px;
+        }
+        #menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #menu ul li {
+            margin: 5px 0;
+        }
+        #menu ul li a {
+            display: block;
+            padding: 5px;
+            color: #0645ad;
+            text-decoration: none;
+        }
+        #menu ul li a:hover {
+            background-color: #f1f1f1;
+        }
+        #content {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #a2a9b1;
+        }
+        h1, h2 {
+            color: #000;
+        }
+        #toc {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #a2a9b1;
+            margin-bottom: 20px;
+        }
+        #toc ul {
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+            color: #555;
+            border-top: 1px solid #a2a9b1;
+            background-color: #f8f9fa;
+            margin-top: 20px;
+        }
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <img src="https://blockattack.fun/wiki.ico" alt="Blockattack Wiki">
+            <h1>Blockattack Wiki</h1>
+        </div>
+        <button id="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <nav id="menu">
+            <ul>
+                <li><a href="/">Blockattack</a></li>
+                <li><a href="/join">Trete bei</a></li>
+                <li><a href="/wiki">Wiki</a></li>
+                <li><a href="#content">Skip</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="content">
+        <h1>Blockattack Wiki</h1>
+        <p>Willkommen bei der Blockattack-Wiki-Seite!</p>
+        
+        <div id="toc">
+            <strong>Inhaltsverzeichnis</strong>
+            <ul>
+                <li><a href="#java-installation">Wie installiere ich Java?</a></li>
+                <li><a href="#fabric">Wie installiere ich Fabric?</a></li>
+                <li><a href="#fabric-api">Wie installiere ich die Fabric API?</a></li>
+                <li><a href="#simple-voice-chat">Wie installiere ich Simple Voice Chat?</a></li>
+            </ul>
+        </div>
+        <p>Vorerklärung: Du brauchst Fabric und Fabric API für Simple Voice Chat. installiere das und dann gehe dann auf simple voice chat. Wenn du Hilfe brauchst Tritt unseren Discord bei: <a href="#" onclick="newtab('https://discord.gg/ARDHyKxtpH')">Discord von Blockattack</a></p>
+        <h2 id="java-installation">Wie installiere ich Java?</h2>
+        <p>Um den Fabric-Installer auszuführen, benötigst du Java. Hier erfährst du, wie du es installierst:</p>
+        <ol>
+            <li><strong>Überprüfen, ob Java bereits installiert ist:</strong>
+                <p>1. Drücke Windows + R, um das „Ausführen“-Fenster zu öffnen.</p>
+                <p>2. Gib <code>cmd</code> ein und klicke auf „OK“.</p>
+                <p>3. Gib den Befehl <code>java -version</code> ein und drücke „Enter“.</p>
+                <p>4. Wenn eine Versionsnummer erscheint (z.B. „Java 17.0.x“), ist Java bereits installiert.</p>
+            </li>
+            <li><strong>Java installieren (falls nicht vorhanden):</strong>
+                <p>1. Gehe auf die Java-Download-Seite: <a href="#" onclick="newtab('https://www.oracle.com/java/technologies/javase-jdk11-downloads.html')">Java SE Downloads</a>.</p>
+                <p>2. Wähle die neueste Version und lade das Installationspaket für Windows herunter.</p>
+                <p>3. Führe das Installationsprogramm aus und folge den Anweisungen, um Java zu installieren.</p>
+            </li>
+        </ol>
+
+        <h2 id="fabric">Wie installiere ich Fabric?</h2>
+        <p>Nun kannst du den Fabric-Installer verwenden, um Fabric für Minecraft zu installieren:</p>
+        <ol>
+            <li><strong>Fabric Installer herunterladen:</strong> Besuche <a href="#" onclick="newtab('https://fabricmc.net/use/')">Fabric</a> und lade den Installer herunter.</li>
+            <li><strong>Fabric installieren:</strong> Öffne den Installer, wähle die Minecraft-Version und klicke auf „Installieren“.</li>
+            <li><strong>Minecraft starten:</strong> Öffne den Minecraft Launcher, wähle das „Fabric“-Profil und klicke auf „Starten“.</li>
+        </ol>
+
+        <h2 id="fabric-api">Wie installiere ich die Fabric API?</h2>
+        <p>Viele Mods, darunter auch Simple Voice Chat, erfordern die Fabric API. Folge diesen Schritten:</p>
+        <ol>
+            <li><strong>Fabric API herunterladen:</strong> Gehe zu <a href="#" onclick="newtab('https://www.curseforge.com/minecraft/mc-mods/fabric-api')">Fabric API auf CurseForge</a> und lade die neueste Version herunter.</li>
+            <li><strong>Fabric API installieren:</strong> Verschiebe die heruntergeladene fabric-api.jar-Datei (nur wenn da api drinne ist im namen) in den „mods“-Ordner von Minecraft.</li>
+            <li><strong>Minecraft Ordner finden:</strong> Drücke Windows + R, gib <code>%appdata%</code> ein und klicke auf „OK“. Öffne den Ordner „.minecraft“ und dann den Ordner „mods“.</li>
+        </ol>
+
+        <h2 id="simple-voice-chat">Wie installiere ich Simple Voice Chat?</h2>
+        <p>Jetzt kannst du den Simple Voice Chat Mod installieren:</p>
+        <ol>
+            <li><strong>Simple Voice Chat Mod herunterladen:</strong> Gehe zu <a href="#" onclick="newtab('https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat')">Simple Voice Chat auf CurseForge</a> und lade die neueste Version herunter.</li>
+            <li><strong>Mod installieren:</strong> Drücke Windows + R, gib <code>%appdata%</code> ein und klicke auf „OK“. Öffne den Ordner „.minecraft“ und dann den Ordner „mods“. Ziehe die heruntergeladene .jar-Datei (für simple voice chat, kein fabric) in den „mods“-Ordner von Minecraft.</li>
+            <li><strong>Minecraft starten:</strong> Starte Minecraft mit dem Fabric-Profil. Der Voice Chat sollte nun verfügbar sein!</li>
+        </ol>
+        
+        <p>Hinweis: Bedrock-Spieler können den Voice Chat nicht nutzen.</p>
+        
+    </div>
+    
+    <footer>
+        <p>&copy; Blockattack 2025 | Seite von TheErrorExe.</p>
+        <a href="/">Zurück zur Hauptseite</a>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+        function newtab(url) {
+    const newTab = window.open(url, "_blank");
+    if (newTab) {
+        newTab.focus();
+    } else {
+        console.log("Error creating new Tab");
+    }
+}
+
+    </script>
+</body>
+</html>
