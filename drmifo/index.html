@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Mifo - Minecraft Content Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+        .header {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            padding: 50px 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 10px auto;
+            display: block;
+            border: 4px solid white;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .calendar {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 800px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+        .calendar th, .calendar td {
+            padding: 10px;
+            border: 1px solid #444;
+            text-align: center;
+        }
+        .calendar th {
+            background: #2575fc;
+        }
+        .footer {
+            margin-top: 40px;
+            padding: 15px;
+            background: #181818;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://blockattack.fun/drmifo.jpg" alt="Dr Mifo Profilbild" class="profile-img">
+        <h1>Dr Mifo</h1>
+        <p>Minecraft-Streamer & Content Creator</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>YouTube</h2>
+            <p>Schau dir die neuesten Videos an!</p>
+            <a href="https://www.youtube.com/@DrMifo" target="_blank" class="button">
+                <i class="fab fa-youtube"></i> Kanal besuchen
+            </a>
+        </section>
+        <section class="card">
+            <h2>Twitch</h2>
+            <p>Sei live dabei und verpasse keinen Stream!</p>
+            <a href="https://www.twitch.tv/DrMifo" target="_blank" class="button">
+                <i class="fab fa-twitch"></i> Live auf Twitch
+            </a>
+        </section>
+        <section class="card">
+            <h2>Streaming-Plan</h2>
+            <div class="calendar">
+                <table id="scheduleTable">
+                    <tr>
+                        <th>Tag</th>
+                        <th>Zeit</th>
+                        <th>Spiel</th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section class="card">
+            <h2>Letzte Videos</h2>
+            <p>Hier findest du die neuesten Inhalte:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1CAYvj7jvrk?si=b5QNFUjOKKcRgY_g&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section class="card">
+            <h2>Über Dr Mifo</h2>
+            <p>Dr Mifo ist ein leidenschaftlicher Minecraft-Streamer, der spannende Inhalte erstellt und eine engagierte Community aufbaut.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Dr Mifo. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+        const cards = document.querySelectorAll(".card");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.3 });
+        cards.forEach(card => observer.observe(card));
+
+        // Streaming-Plan aus JSON laden
+        fetch("schedule.json")
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById("scheduleTable");
+                data.forEach(event => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `<td>${event.tag}</td><td>${event.zeit}</td><td>${event.spiel}</td>`;
+                    table.appendChild(row);
+                });
+            })
+            .catch(error => console.error("Fehler beim Laden des Streaming-Plans:", error));
+    </script>
+</body>
+</html>
