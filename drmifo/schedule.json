@@ -1,35 +1,42 @@
 [
     {
+        "Datum": "24.02.2025",
         "tag": "Montag",
         "zeit": "18:00 - 21:00",
         "infos": "Blockattack LIVE "
     },
    {
-        "tag": "Dienstag",
+        "Datum": "25.02.2025",
+       "tag": "Dienstag",
         "zeit": "18:00 - 21:00",
         "infos": "Blockattack LIVE"
     }, 
     {
+        "Datum": "26.02.2025",
         "tag": "Mittwoch",
         "zeit": "18:00 - 21:00",
         "infos": "Blockattack Live"
     },
     {
+        "Datum": "27.02.2025",
         "tag": "Donnerstag",
         "zeit": "18:00 - 21:00",
         "infos": "Blockattack LIVE"
     },
     {
+        "Datum": "28.02.2025",
         "tag": "Freitag",
         "zeit": "18:00 - 24:00",
         "infos": "Blockattack LIVE"
     },
     {
+        "Datum": "01.03.2025",
         "tag": "Samstag",
         "zeit": "18:00 - 24:00",
-        "infos": "NICHT SCIHER DAS ICH UM 18 UHR da bin"
+        "infos": "NICHT SICHER DAS ICH UM 18 UHR da bin"
     },
     {
+        "Datum": "02.03.2025",
         "tag": "Sonntag",
         "zeit": "18:00 - 21:00",
         "infos": "Blockattack LIVE"
