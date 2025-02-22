@@ -1,27 +1,37 @@
 [
     {
         "tag": "Montag",
-        "zeit": "18:00 - 20:00",
-        "infos": "Blockattack Road to "
+        "zeit": "18:00 - 21:00",
+        "infos": "Blockattack LIVE "
     },
+   {
+        "tag": "Dienstag",
+        "zeit": "18:00 - 21:00",
+        "infos": "Blockattack LIVE"
+    }, 
     {
         "tag": "Mittwoch",
-        "zeit": "19:00 - 21:00",
-        "infos": "Minecraft"
+        "zeit": "18:00 - 21:00",
+        "infos": "Blockattack Live"
+    },
+    {
+        "tag": "Donnerstag",
+        "zeit": "18:00 - 21:00",
+        "infos": "Blockattack LIVE"
     },
     {
         "tag": "Freitag",
-        "zeit": "20:00 - 22:00",
-        "infos": "Minecraft"
+        "zeit": "18:00 - 24:00",
+        "infos": "Blockattack LIVE"
     },
     {
         "tag": "Samstag",
-        "zeit": "18:00 - 20:00",
-        "infos": "g"
-    },
+        "zeit": "18:00 - 24:00",
+        "infos": "NICHT SCIHER DAS ICH UM 18 UHR da bin"
+    } 
     {
         "tag": "Sonntag",
-        "zeit": "15:00 - 18:00",
-        "infos": "kein minecraft"
-    }
+        "zeit": "18:00 - 21:00",
+        "infos": "Blockattack LIVE"
+    },
 ]
