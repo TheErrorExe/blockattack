@@ -1,0 +1,22 @@
+[
+    {
+        "tag": "Montag",
+        "zeit": "18:00 - 20:00",
+        "infos": "Blockattack Road to "
+    },
+    {
+        "tag": "Mittwoch",
+        "zeit": "19:00 - 21:00",
+        "infos": "Minecraft"
+    },
+    {
+        "tag": "Freitag",
+        "zeit": "20:00 - 22:00",
+        "infos": "Minecraft"
+    },
+    {
+        "tag": "Sonntag",
+        "zeit": "15:00 - 18:00",
+        "infos": "kein minecraft"
+    }
+]

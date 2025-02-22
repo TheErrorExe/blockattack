@@ -112,7 +112,7 @@
                     <tr>
                         <th>Tag</th>
                         <th>Zeit</th>
-                        <th>Spiel</th>
+                        <th>Extra-Infos</th>
                     </tr>
                 </table>
             </div>
@@ -144,14 +144,13 @@
         }, { threshold: 0.3 });
         cards.forEach(card => observer.observe(card));
 
-        // Streaming-Plan aus JSON laden
-        fetch("schedule.json")
+        fetch("/schedule.json")
             .then(response => response.json())
             .then(data => {
                 const table = document.getElementById("scheduleTable");
                 data.forEach(event => {
                     const row = document.createElement("tr");
-                    row.innerHTML = `<td>${event.tag}</td><td>${event.zeit}</td><td>${event.spiel}</td>`;
+                    row.innerHTML = `<td>${event.tag}</td><td>${event.zeit}</td><td>${event.infos}</td>`;
                     table.appendChild(row);
                 });
             })
