@@ -144,7 +144,7 @@
         }, { threshold: 0.3 });
         cards.forEach(card => observer.observe(card));
 
-        fetch("/schedule.json")
+        fetch("/drmifo/schedule.json")
             .then(response => response.json())
             .then(data => {
                 const table = document.getElementById("scheduleTable");
