@@ -111,6 +111,7 @@
             <div class="calendar">
                 <table id="scheduleTable">
                     <tr>
+                        <th>Datum</th>
                         <th>Tag</th>
                         <th>Zeit</th>
                         <th>Extra-Infos</th>
@@ -151,7 +152,7 @@ fetch("/drmifo/schedule.json?nocache=" + new Date().getTime())
         const table = document.getElementById("scheduleTable");
         data.forEach(event => {
             const row = document.createElement("tr");
-            row.innerHTML = `<td>${event.tag}</td><td>${event.zeit}</td><td>${event.infos}</td><td>${event.datum}</td>`;
+            row.innerHTML = `<td>${event.datum}</td><td>${event.tag}</td><td>${event.zeit}</td><td>${event.infos}</td>`;
             table.appendChild(row);
         });
     })
