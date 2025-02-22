@@ -151,7 +151,7 @@ fetch("/drmifo/schedule.json?nocache=" + new Date().getTime())
         const table = document.getElementById("scheduleTable");
         data.forEach(event => {
             const row = document.createElement("tr");
-            row.innerHTML = `<td>${event.tag}</td><td>${event.zeit}</td><td>${event.infos}</td>`;
+            row.innerHTML = `<td>${event.tag}</td><td>${event.zeit}</td><td>${event.infos}</td><td>${event.datum}</td>`;
             table.appendChild(row);
         });
     })
