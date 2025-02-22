@@ -145,17 +145,18 @@
         }, { threshold: 0.3 });
         cards.forEach(card => observer.observe(card));
 
-        fetch("/drmifo/schedule.json")
-            .then(response => response.json())
-            .then(data => {
-                const table = document.getElementById("scheduleTable");
-                data.forEach(event => {
-                    const row = document.createElement("tr");
-                    row.innerHTML = `<td>${event.tag}</td><td>${event.zeit}</td><td>${event.infos}</td>`;
-                    table.appendChild(row);
-                });
-            })
-            .catch(error => console.error("Fehler beim Laden des Streaming-Plans:", error));
+fetch("/drmifo/schedule.json?nocache=" + new Date().getTime())
+    .then(response => response.json())
+    .then(data => {
+        const table = document.getElementById("scheduleTable");
+        data.forEach(event => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${event.tag}</td><td>${event.zeit}</td><td>${event.infos}</td>`;
+            table.appendChild(row);
+        });
+    })
+    .catch(error => console.error("Fehler beim Laden des Streaming-Plans:", error));
+
     </script>
 </body>
 </html>
