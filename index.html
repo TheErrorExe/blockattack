@@ -111,18 +111,6 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
 }
 
     </style>
-    <section id="server-status">
-        <h2>Server Status</h2>
-        <div id="status-message">Lade Serverstatus...</div>
-        <div id="server-info" style="display:none;">
-            <p id="players-online"><span></span></p>
-            <p id="motd"><span></span></p>
-            <p id="version"><span></span></p>
-        </div>
-        <div id="loading-spinner" style="display:block;">
-            <span class="loader"></span> Server wird überprüft...
-        </div>
-    </section>
     <section id="features">
         <h2>Warum Blockattack?</h2>
         <table style="margin-left: auto; margin-right: auto;">
@@ -151,7 +139,19 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
             </tr>
         </table>
     </section>
-
+    
+    <section id="server-status">
+        <h2>Server Status</h2>
+        <div id="status-message">Lade Serverstatus...</div>
+        <div id="server-info" style="display:none;">
+            <p id="players-online"><span></span></p>
+            <p id="motd"><span></span></p>
+            <p id="version"><span></span></p>
+        </div>
+        <div id="loading-spinner" style="display:block;">
+            <span class="loader"></span> Server wird überprüft...
+        </div>
+    </section>
 
 <section id="discord-section" style="margin-top: 50px;">
     <h2>Discord-Server</h2>
@@ -175,13 +175,14 @@ This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and wi
                 die 1 Mio. Abos zu schaffen. Ich aktzeptiere alle die auf meinen Kanal sind bzw. im Chat sind. Wenn ihr
                 mir helfen wollt mein Traum zu Verwirklichen dann lasst gerne ein Abo da: </p><a style="display: inline"
                 href="https://www.youtube.com/@DrMifo">Dr. Mifo auf YouTube</a>
+                <a href="/drmifo/#streamingplan">Streamingplan</a>
         </div>
     </section>
 
     <script>
         const serverAddress = 'blockattack.fun';
 
-        const apiUrl = `https://api.mcstatus.io/v2/status/java/${serverAddress}`;
+        const apiUrl = `https://api.mcstatus.io/v2/us/java/${serverAddress}`;
 
         fetch(apiUrl)
             .then(response => response.json())
