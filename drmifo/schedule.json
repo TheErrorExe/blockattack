@@ -1,44 +1,44 @@
 [
     {
-        "datum": "24.02.2025",
+        "datum": "03.03.2025",
         "tag": "Montag",
-        "zeit": "18:00 - 21:00",
+        "zeit": "18:00 - 24:00",
         "infos": "Blockattack LIVE "
     },
    {
-        "datum": "25.02.2025",
+        "datum": "04.03.2025",
         "tag": "Dienstag",
-        "zeit": "19:00 - 21:00",
-        "infos": "Blockattack LIVE"
+        "zeit": "-",
+        "infos": "FASCHINGSUMZUG/FEIERN KEIN STREAM!!!!"
     }, 
     {
-        "datum": "26.02.2025",
+        "datum": "05.03.2025",
         "tag": "Mittwoch",
-        "zeit": "18:00 - 21:00",
-        "infos": "Blockattack Live"
+        "zeit": "21:00 - 24:00",
+        "infos": " Komme später JFW ÜBUNG!!!"
     },
     {
-        "datum": "27.02.2025",
+        "datum": "06.03.2025",
         "tag": "Donnerstag",
-        "zeit": "18:00 - 21:00",
+        "zeit": "18:00 - 24:00",
         "infos": "Blockattack LIVE"
     },
     {
-        "datum": "28.02.2025",
+        "datum": "07.03.2025",
         "tag": "Freitag",
         "zeit": "18:00 - 24:00",
         "infos": "Blockattack LIVE"
     },
     {
-        "datum": "01.03.2025",
+        "datum": "08.03.2025",
         "tag": "Samstag",
         "zeit": "18:00 - 24:00",
-        "infos": "NICHT SICHER DAS ICH UM 18 UHR da bin"
+        "infos": "BLOCKATTACK LIVE"
     },
     {
-        "datum": "02.03.2025",
+        "datum": "09.03.2025",
         "tag": "Sonntag",
-        "zeit": "18:00 - 24:00",
+        "zeit": "18:00 - 21:00",
         "infos": "Blockattack LIVE"
     }
 ]
