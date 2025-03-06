@@ -1,7 +1,7 @@
 // JS File for Blockattack
 
 // Redirect
-window.location.href = "/IMG_1356.jpeg";
+//window.location.href = "/IMG_1356.jpeg";
 // Cookie Banner
 document.addEventListener("DOMContentLoaded", function () {
     const cookieKey = "cookieConsent";
