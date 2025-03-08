@@ -1,7 +1,33 @@
 // JS File for Blockattack
 
+// Impressum
+document.addEventListener("DOMContentLoaded", function () {
+    const path = window.location.pathname;
+    
+    if (path.startsWith("/wiki") || path.startsWith("/drmifo")) {
+        return;
+    }
+    
+    const separator = document.createElement("p");
+    separator.style.display = "inline";
+    separator.textContent = " | ";
+    
+    const link = document.createElement("a");
+    link.href = "/impressum.html";
+    link.style.display = "inline";
+    link.textContent = "Impressum";
+    
+    document.querySelectorAll("footer").forEach(footer => {
+        footer.appendChild(separator.cloneNode(true));
+        footer.appendChild(link.cloneNode(true));
+    });
+});
+
+
 // Redirect
+
 //window.location.href = "/IMG_1356.jpeg";
+
 // Cookie Banner
 document.addEventListener("DOMContentLoaded", function () {
     const cookieKey = "cookieConsent";
