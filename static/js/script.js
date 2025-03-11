@@ -24,6 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Lockdown
+
+alert('
+Blockattack ist nun im Lockdown Modus
+
+- Bedrock Spieler werden nicht mehr joinen können
+
+- Der Minecraft Server wird als Offline angezeigt, obwohl er es nicht ist, einfach joinen
+
+- Discord Einladungen sind gesperrt
+
+- Discord Spam Filter auch Alarm stufe rot
+
+Warum?
+
+Wir werden geddost und bedroht. Wir versuchen es so schnell wie möglich zu fixen');
+
 // Redirect
 
 //window.location.href = "/IMG_1356.jpeg";
