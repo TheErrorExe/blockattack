@@ -1,44 +1,44 @@
 [
     {
-        "datum": "03.03.2025",
+        "datum": "10.03.2025",
         "tag": "Montag",
-        "zeit": "18:00 - 24:00",
-        "infos": "Blockattack LIVE "
+        "zeit": "-",
+        "infos": "FEUERWEHRÜBUNG "
     },
    {
-        "datum": "04.03.2025",
+        "datum": "11.03.2025",
         "tag": "Dienstag",
-        "zeit": "-",
-        "infos": "FASCHINGSUMZUG/FEIERN KEIN STREAM!!!!"
+        "zeit": "18:00-21:00",
+        "infos": "BLOCKATTACK LIVE"
     }, 
     {
-        "datum": "05.03.2025",
+        "datum": "12.03.2025",
         "tag": "Mittwoch",
-        "zeit": "21:00 - 22/23:00",
-        "infos": " Komme später JFW ÜBUNG!!!"
+        "zeit": "18:00 - 24:00",
+        "infos": "BLOCKATTACK LIVE"
     },
     {
-        "datum": "06.03.2025",
+        "datum": "13.03.2025",
         "tag": "Donnerstag",
-        "zeit": "18:00 - 22/3:00",
-        "infos": "Blockattack LIVE"
+        "zeit": "18:00 - 21:00",
+        "infos": "MAYBE YOUTUBE MEETING"
     },
     {
-        "datum": "07.03.2025",
+        "datum": "14.03.2025",
         "tag": "Freitag",
         "zeit": "18:00 - 23/24:00",
         "infos": "Blockattack LIVE"
     },
     {
-        "datum": "08.03.2025",
+        "datum": "15.03.2025",
         "tag": "Samstag",
-        "zeit": "18:00 - /2324:00",
+        "zeit": "18:00 - 23/24:00",
         "infos": "BLOCKATTACK LIVE"
     },
     {
-        "datum": "09.03.2025",
+        "datum": "16.03.2025",
         "tag": "Sonntag",
-        "zeit": "18:00 - 21:00",
-        "infos": "Blockattack LIVE"
+        "zeit": " - ",
+        "infos": "JAHRESHAUPTVERSAMMLUNG FFW"
     }
 ]
