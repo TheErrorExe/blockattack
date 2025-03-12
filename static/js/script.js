@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Lockdown
 
-alert(`
+/* alert(`
 Blockattack ist nun im Lockdown Modus
 
 - Bedrock Spieler werden nicht mehr joinen können
@@ -41,7 +41,7 @@ Warum?
 
 Wir werden geddost und bedroht. Wir versuchen es so schnell wie möglich zu fixen
 `);
-
+*/
 
 // Redirect
 
