@@ -1,44 +1,44 @@
 [
     {
-        "datum": "10.03.2025",
+        "datum": "17.03.2025",
         "tag": "Montag",
-        "zeit": "-",
-        "infos": "FEUERWEHRÜBUNG "
+        "zeit": "18:00-21:00",
+        "infos": "BLOCKATTACK LIVE "
     },
    {
-        "datum": "11.03.2025",
+        "datum": "18.03.2025",
         "tag": "Dienstag",
-        "zeit": "18:00-21:00",
+        "zeit": "18:00-22:00",
         "infos": "BLOCKATTACK LIVE"
     }, 
     {
-        "datum": "12.03.2025",
+        "datum": "19.03.2025",
         "tag": "Mittwoch",
-        "zeit": "18:00 - 24:00",
-        "infos": "BLOCKATTACK LIVE"
+        "zeit": "-",
+        "infos": "JUGENDFEUERWEHR ÜBUNG"
     },
     {
-        "datum": "13.03.2025",
+        "datum": "20.03.2025",
         "tag": "Donnerstag",
-        "zeit": "18:00 - 21:00",
-        "infos": "MAYBE YOUTUBE MEETING"
+        "zeit": "18:00 - 22:00",
+        "infos": "BLOCKATTTACK LIVE"
     },
     {
-        "datum": "14.03.2025",
+        "datum": "21.03.2025",
         "tag": "Freitag",
-        "zeit": "18:00 - 23/24:00",
-        "infos": "Blockattack LIVE"
+        "zeit": "-",
+        "infos": "JUGENDFEUERWEHR VÖLKERBALLTUNIER"
     },
     {
-        "datum": "15.03.2025",
+        "datum": "22.03.2025",
         "tag": "Samstag",
         "zeit": "18:00 - 23/24:00",
         "infos": "BLOCKATTACK LIVE"
     },
     {
-        "datum": "16.03.2025",
+        "datum": "23.03.2025",
         "tag": "Sonntag",
-        "zeit": " - ",
-        "infos": "JAHRESHAUPTVERSAMMLUNG FFW"
+        "zeit": " 18:00-22:00",
+        "infos": "BLOCKTTACK LIVE"
     }
 ]
