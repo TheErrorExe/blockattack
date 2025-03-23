@@ -1,42 +1,42 @@
 [
     {
-        "datum": "17.03.2025",
+        "datum": "24.03.2025",
         "tag": "Montag",
-        "zeit": "18:00-21:00",
+        "zeit": "18:00-22:00",
         "infos": "BLOCKATTACK LIVE "
     },
    {
-        "datum": "18.03.2025",
+        "datum": "25.03.2025",
         "tag": "Dienstag",
         "zeit": "18:00-22:00",
         "infos": "BLOCKATTACK LIVE"
     }, 
     {
-        "datum": "19.03.2025",
+        "datum": "26.03.2025",
         "tag": "Mittwoch",
-        "zeit": "-",
-        "infos": "JUGENDFEUERWEHR ÜBUNG"
-    },
-    {
-        "datum": "20.03.2025",
-        "tag": "Donnerstag",
-        "zeit": "18:00 - 22:00",
-        "infos": "BLOCKATTTACK LIVE"
-    },
-    {
-        "datum": "21.03.2025",
-        "tag": "Freitag",
-        "zeit": "-",
-        "infos": "JUGENDFEUERWEHR VÖLKERBALLTUNIER"
-    },
-    {
-        "datum": "22.03.2025",
-        "tag": "Samstag",
-        "zeit": "18:00 - 23/24:00",
+        "zeit": "18:00-22:00",
         "infos": "BLOCKATTACK LIVE"
     },
     {
-        "datum": "23.03.2025",
+        "datum": "27.03.2025",
+        "tag": "Donnerstag",
+        "zeit": "-",
+        "infos": "BÜRGERVERSAMMLUNG"
+    },
+    {
+        "datum": "28.03.2025",
+        "tag": "Freitag",
+        "zeit": "18:00-24:00",
+        "infos": "BLOCKATTACK LIVE"
+    },
+    {
+        "datum": "29.03.2025",
+        "tag": "Samstag",
+        "zeit": "18:00-23/24:00",
+        "infos": "BLOCKATTACK LIVE"
+    },
+    {
+        "datum": "30.03.2025",
         "tag": "Sonntag",
         "zeit": " 18:00-22:00",
         "infos": "BLOCKTTACK LIVE"
