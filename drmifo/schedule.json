@@ -1,44 +1,44 @@
 [
     {
-        "datum": "24.03.2025",
+        "datum": "31.03.2025",
         "tag": "Montag",
-        "zeit": "18:00-22:00",
-        "infos": "BLOCKATTACK LIVE "
+        "zeit": "-",
+        "infos": "FEUERWEHRÜBUNG"
     },
    {
-        "datum": "25.03.2025",
+        "datum": "01.04.2025",
         "tag": "Dienstag",
         "zeit": "18:00-22:00",
         "infos": "BLOCKATTACK LIVE"
     }, 
     {
-        "datum": "26.03.2025",
+        "datum": "02.04.2025",
         "tag": "Mittwoch",
+        "zeit": "-",
+        "infos": "JUGENDFEUERWEHRÜBUNG"
+    },
+    {
+        "datum": "03.04.2025",
+        "tag": "Donnerstag",
         "zeit": "18:00-22:00",
         "infos": "BLOCKATTACK LIVE"
     },
     {
-        "datum": "27.03.2025",
-        "tag": "Donnerstag",
-        "zeit": "-",
-        "infos": "BÜRGERVERSAMMLUNG"
-    },
-    {
-        "datum": "28.03.2025",
+        "datum": "04.04.2025",
         "tag": "Freitag",
-        "zeit": "18:00-24:00",
-        "infos": "BLOCKATTACK LIVE"
+        "zeit": "-",
+        "infos": "BLAULICHTDISKO JUGENDFEUERWEHR"
     },
     {
-        "datum": "29.03.2025",
+        "datum": "05.04.2025",
         "tag": "Samstag",
         "zeit": "18:00-23/24:00",
         "infos": "BLOCKATTACK LIVE"
     },
     {
-        "datum": "30.03.2025",
+        "datum": "06.04.2025",
         "tag": "Sonntag",
         "zeit": " 18:00-22:00",
-        "infos": "BLOCKTTACK LIVE"
+        "infos": "KANN SEIN DAS ICH NICHT DA BIN"
     }
 ]
