@@ -1,44 +1,44 @@
 [
     {
-        "datum": "31.03.2025",
+        "datum": "07.04.2025",
         "tag": "Montag",
+        "zeit": "18:00-21:00",
+        "infos": "BLOCKATTACK LIVE"
+    },
+   {
+        "datum": "08.04.2025",
+        "tag": "Dienstag",
+        "zeit": "-",
+        "infos": "UNTERWEGS"
+    }, 
+    {
+        "datum": "09.04.2025",
+        "tag": "Mittwoch",
+        "zeit": "19:00-22:00",
+        "infos": "DAVOR EINSATZ FFW"
+    },
+    {
+        "datum": "10.04.2025",
+        "tag": "Donnerstag",
+        "zeit": "-",
+        "infos": "EINWEISUNG BEIM THW MIT DER FFW"
+    },
+    {
+        "datum": "11.04.2025",
+        "tag": "Freitag",
         "zeit": "-",
         "infos": "FEUERWEHRÜBUNG"
     },
-   {
-        "datum": "01.04.2025",
-        "tag": "Dienstag",
-        "zeit": "18:00-22:00",
-        "infos": "BLOCKATTACK LIVE"
-    }, 
     {
-        "datum": "02.04.2025",
-        "tag": "Mittwoch",
-        "zeit": "-",
-        "infos": "JUGENDFEUERWEHRÜBUNG"
-    },
-    {
-        "datum": "03.04.2025",
-        "tag": "Donnerstag",
-        "zeit": "18:00-22:00",
-        "infos": "BLOCKATTACK LIVE"
-    },
-    {
-        "datum": "04.04.2025",
-        "tag": "Freitag",
-        "zeit": "-",
-        "infos": "BLAULICHTDISKO JUGENDFEUERWEHR"
-    },
-    {
-        "datum": "05.04.2025",
+        "datum": "12.04.2025",
         "tag": "Samstag",
-        "zeit": "18:00-23/24:00",
-        "infos": "BLOCKATTACK LIVE"
+        "zeit": "-",
+        "infos": "FEUERWEHRÜBUNG"
     },
     {
-        "datum": "06.04.2025",
+        "datum": "13.04.2025",
         "tag": "Sonntag",
         "zeit": " 18:00-22:00",
-        "infos": "KANN SEIN DAS ICH NICHT DA BIN"
+        "infos": "BLOCKATTACK LIVE"
     }
 ]
